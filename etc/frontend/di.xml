@@ -4,4 +4,9 @@
         <plugin name="Yireo_LokiCheckoutPayNl::paymentMethodIcon"
                 type="Yireo\LokiCheckoutPayNl\Plugin\PaymentMethodIconPlugin"/>
     </type>
+
+    <type name="Yireo\LokiCheckout\Step\FinalStep\RedirectUrl">
+        <plugin name="Yireo_LokiCheckoutPayNl::payRedirectUrl"
+                type="Yireo\LokiCheckoutPayNl\Plugin\PayRedirectUrlPlugin"/>
+    </type>
 </config>
