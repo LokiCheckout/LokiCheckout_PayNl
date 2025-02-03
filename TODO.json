@@ -1,7 +1,7 @@
 {
   "module": {
     "Module Setup": "complete",
-    "Payment logos": "pending",
+    "Payment logos": "complete",
     "Intended functionality": "processing"
   },
   "payment_methods": {

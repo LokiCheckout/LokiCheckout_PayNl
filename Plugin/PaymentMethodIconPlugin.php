@@ -2,10 +2,16 @@
 
 namespace Yireo\LokiCheckoutPayNl\Plugin;
 
+use Paynl\Payment\Model\Config;
 use Yireo\LokiCheckout\ViewModel\PaymentMethodIcon;
 
 class PaymentMethodIconPlugin
 {
+    public function __construct(
+        private Config $config
+    ) {
+    }
+
     public function afterGetIcon(
         PaymentMethodIcon $paymentMethodIcon,
         string $result,
@@ -19,11 +25,8 @@ class PaymentMethodIconPlugin
             return $result;
         }
 
-        $iconFilePath = $paymentMethodIcon->getIconPath(
-            'Paynl_Payment',
-            'view/frontend/web/logos/'.$match[1].'.svg'
-        );
+        $iconUrl = $this->config->getIconUrl($paymentMethodCode);
 
-        return $paymentMethodIcon->getIconOutput($iconFilePath, 'svg');
+        return '<img src="' . $iconUrl . '" />';
     }
 }
