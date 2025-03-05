@@ -21,7 +21,7 @@ class PaymentMethodIconPlugin
             return $result;
         }
 
-        if (!preg_match('/^paynl_(.*)$/', $paymentMethodCode, $match)) {
+        if (!preg_match('/^paynl_(.*)$/', $paymentMethodCode)) {
             return $result;
         }
 
