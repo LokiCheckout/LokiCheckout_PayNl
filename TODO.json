@@ -1,73 +1,258 @@
 {
-  "module": {
-    "Module Setup": "complete",
-    "Payment logos": "complete",
-    "Intended functionality": "processing"
-  },
-  "payment_methods": {
-    "iDEAL": "complete",
-    "Bancontact": "complete",
-    "Giropay": "processing",
-    "Carte Bancaire": "processing",
-    "SOFORT": "processing",
-    "Maestro": "processing",
-    "Bank Transfer": "processing",
-    "Trustly": "processing",
-    "Multibanco": "processing",
-    "Blik": "processing",
-    "Online Bankbetaling": "processing",
-
-    "Visa": "pending",
-    "Mastercard": "pending",
-    "American Express": "pending",
-    "Podium Cadeaukaart": "pending",
-    "PostePay": "pending",
-    "Dankort": "pending",
-    "Nexi": "pending",
-
-    "VVV Cadeaukaart": "pending",
-    "Webshop Giftcard": "pending",
-    "FashionCheque": "pending",
-    "in3": "pending",
-    "Gezondheidsbon": "pending",
-    "Fashion Giftcard": "pending",
-    "GivaCard": "pending",
-    "De Cadeaukaart": "pending",
-    "Paysafecard": "pending",
-    "Huis en Tuin Cadeau": "pending",
-    "Good4Fun": "pending",
-    "YourGift": "pending",
-    "Bataviastad": "pending",
-    "Shoes & Sneakers": "pending",
-    "Cadeau": "pending",
-    "Your Green Gift": "pending",
-    "Cadeaukaart": "pending",
-    "Bioscoopbon": "pending",
-    "Bloemen Cadeaukaart": "pending",
-    "Boekenbon": "pending",
-    "Dinerbon": "pending",
-    "Festival Cadeaukaart": "pending",
-    "Parfum Cadeaukaart": "pending",
-    "Winkelcheque": "pending",
-
-    "Riverty": "pending",
-    "Achteraf betalen": "pending",
-    "via Billink": "pending",
-    "Cashly": "pending",
-    "Klarna": "pending",
-    "SprayPay": "pending",
-    "Biller": "pending",
-
-    "PayPal": "pending",
-    "WeChatPay": "pending",
-    "AmazonPay": "pending",
-    "Pay Fixed Price": "pending",
-    "Instore Payments": "pending",
-    "Point Of Sale (POS)": "pending",
-    "Przelewy24": "pending",
-    "Creditclick": "pending",
-    "Payconiq": "pending",
-    "Google Pay": "pending",
-    "Apple Pay": "pending"
-  }
+    "module": {
+        "Module Setup": {
+            "version": "1.0",
+            "status": "complete"
+        },
+        "Payment logos": {
+            "version": "1.0",
+            "status": "complete"
+        },
+        "Intended functionality": {
+            "version": "1.0",
+            "status": "processing"
+        }
+    },
+    "payment_methods": {
+        "iDEAL": {
+            "version": "1.0",
+            "status": "complete"
+        },
+        "Bancontact": {
+            "version": "1.0",
+            "status": "complete"
+        },
+        "Giropay": {
+            "version": "1.0",
+            "status": "processing"
+        },
+        "Carte Bancaire": {
+            "version": "1.0",
+            "status": "processing"
+        },
+        "SOFORT": {
+            "version": "1.0",
+            "status": "processing"
+        },
+        "Maestro": {
+            "version": "1.0",
+            "status": "processing"
+        },
+        "Bank Transfer": {
+            "version": "1.0",
+            "status": "processing"
+        },
+        "Trustly": {
+            "version": "1.0",
+            "status": "processing"
+        },
+        "Multibanco": {
+            "version": "1.0",
+            "status": "processing"
+        },
+        "Blik": {
+            "version": "1.0",
+            "status": "processing"
+        },
+        "Online Bankbetaling": {
+            "version": "1.0",
+            "status": "processing"
+        },
+        "Visa": {
+            "version": "1.0",
+            "status": "pending"
+        },
+        "Mastercard": {
+            "version": "1.0",
+            "status": "pending"
+        },
+        "American Express": {
+            "version": "1.0",
+            "status": "pending"
+        },
+        "Podium Cadeaukaart": {
+            "version": "1.0",
+            "status": "pending"
+        },
+        "PostePay": {
+            "version": "1.0",
+            "status": "pending"
+        },
+        "Dankort": {
+            "version": "1.0",
+            "status": "pending"
+        },
+        "Nexi": {
+            "version": "1.0",
+            "status": "pending"
+        },
+        "VVV Cadeaukaart": {
+            "version": "1.0",
+            "status": "pending"
+        },
+        "Webshop Giftcard": {
+            "version": "1.0",
+            "status": "pending"
+        },
+        "FashionCheque": {
+            "version": "1.0",
+            "status": "pending"
+        },
+        "in3": {
+            "version": "1.0",
+            "status": "pending"
+        },
+        "Gezondheidsbon": {
+            "version": "1.0",
+            "status": "pending"
+        },
+        "Fashion Giftcard": {
+            "version": "1.0",
+            "status": "pending"
+        },
+        "GivaCard": {
+            "version": "1.0",
+            "status": "pending"
+        },
+        "De Cadeaukaart": {
+            "version": "1.0",
+            "status": "pending"
+        },
+        "Paysafecard": {
+            "version": "1.0",
+            "status": "pending"
+        },
+        "Huis en Tuin Cadeau": {
+            "version": "1.0",
+            "status": "pending"
+        },
+        "Good4Fun": {
+            "version": "1.0",
+            "status": "pending"
+        },
+        "YourGift": {
+            "version": "1.0",
+            "status": "pending"
+        },
+        "Bataviastad": {
+            "version": "1.0",
+            "status": "pending"
+        },
+        "Shoes & Sneakers": {
+            "version": "1.0",
+            "status": "pending"
+        },
+        "Cadeau": {
+            "version": "1.0",
+            "status": "pending"
+        },
+        "Your Green Gift": {
+            "version": "1.0",
+            "status": "pending"
+        },
+        "Cadeaukaart": {
+            "version": "1.0",
+            "status": "pending"
+        },
+        "Bioscoopbon": {
+            "version": "1.0",
+            "status": "pending"
+        },
+        "Bloemen Cadeaukaart": {
+            "version": "1.0",
+            "status": "pending"
+        },
+        "Boekenbon": {
+            "version": "1.0",
+            "status": "pending"
+        },
+        "Dinerbon": {
+            "version": "1.0",
+            "status": "pending"
+        },
+        "Festival Cadeaukaart": {
+            "version": "1.0",
+            "status": "pending"
+        },
+        "Parfum Cadeaukaart": {
+            "version": "1.0",
+            "status": "pending"
+        },
+        "Winkelcheque": {
+            "version": "1.0",
+            "status": "pending"
+        },
+        "Riverty": {
+            "version": "1.0",
+            "status": "pending"
+        },
+        "Achteraf betalen": {
+            "version": "1.0",
+            "status": "pending"
+        },
+        "via Billink": {
+            "version": "1.0",
+            "status": "pending"
+        },
+        "Cashly": {
+            "version": "1.0",
+            "status": "pending"
+        },
+        "Klarna": {
+            "version": "1.0",
+            "status": "pending"
+        },
+        "SprayPay": {
+            "version": "1.0",
+            "status": "pending"
+        },
+        "Biller": {
+            "version": "1.0",
+            "status": "pending"
+        },
+        "PayPal": {
+            "version": "1.0",
+            "status": "pending"
+        },
+        "WeChatPay": {
+            "version": "1.0",
+            "status": "pending"
+        },
+        "AmazonPay": {
+            "version": "1.0",
+            "status": "pending"
+        },
+        "Pay Fixed Price": {
+            "version": "1.0",
+            "status": "pending"
+        },
+        "Instore Payments": {
+            "version": "1.0",
+            "status": "pending"
+        },
+        "Point Of Sale (POS)": {
+            "version": "1.0",
+            "status": "pending"
+        },
+        "Przelewy24": {
+            "version": "1.0",
+            "status": "pending"
+        },
+        "Creditclick": {
+            "version": "1.0",
+            "status": "pending"
+        },
+        "Payconiq": {
+            "version": "1.0",
+            "status": "pending"
+        },
+        "Google Pay": {
+            "version": "1.0",
+            "status": "pending"
+        },
+        "Apple Pay": {
+            "version": "1.0",
+            "status": "pending"
+        }
+    }
 }
