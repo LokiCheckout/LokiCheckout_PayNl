@@ -1,0 +1,60 @@
+Achteraf betalen
+AmazonPay
+American Express
+Apple Pay
+Bancontact
+Bank Transfer
+Bataviastad
+Biller
+Bioscoopbon
+Blik
+Bloemen Cadeaukaart
+Boekenbon
+Cadeau
+Cadeaukaart
+Carte Bancaire
+Cashly
+Creditclick
+Dankort
+De Cadeaukaart
+Dinerbon
+Fashion Giftcard
+FashionCheque
+Festival Cadeaukaart
+Gezondheidsbon
+Giropay
+GivaCard
+Good4Fun
+Google Pay
+Huis en Tuin Cadeau
+Instore Payments
+Klarna
+Maestro
+Mastercard
+Multibanco
+Nexi
+Online Bankbetaling
+Parfum Cadeaukaart
+Pay Fixed Price
+PayPal
+Payconiq
+Paysafecard
+Podium Cadeaukaart
+Point Of Sale (POS)
+PostePay
+Przelewy24
+Riverty
+SOFORT
+Shoes & Sneakers
+SprayPay
+Trustly
+VVV Cadeaukaart
+Visa
+WeChatPay
+Webshop Giftcard
+Winkelcheque
+Your Green Gift
+YourGift
+iDEAL
+in3
+via Billink
