@@ -1,0 +1,8 @@
+{
+    "modules": [
+        "Yireo_LokiCheckout",
+        "Paynl_Payment"
+    ],
+    "components": [],
+    "config": []
+}
