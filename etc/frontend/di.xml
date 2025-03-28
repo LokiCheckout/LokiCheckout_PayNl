@@ -8,8 +8,11 @@
         </arguments>
     </type>
 
-    <type name="Yireo\LokiCheckout\Step\FinalStep\RedirectUrl">
-        <plugin name="Yireo_LokiCheckoutPayNl::payRedirectUrl"
-                type="Yireo\LokiCheckoutPayNl\Plugin\PayRedirectUrlPlugin"/>
+    <type name="Yireo\LokiCheckout\Payment\Redirect\RedirectResolverListing">
+        <arguments>
+            <argument name="redirectResolvers" xsi:type="array">
+                <item name="pay_nl" xsi:type="object">Yireo\LokiCheckoutPayNl\Payment\Redirect\RedirectResolver</item>
+            </argument>
+        </arguments>
     </type>
 </config>
