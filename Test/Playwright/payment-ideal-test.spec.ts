@@ -1,0 +1,27 @@
+import {PaymentMethod, PlaceOrderButton} from '@helpers/checkout-objects';
+import {setupCheckout} from '@helpers/setup-checkout';
+import {test, expect} from '@playwright/test';
+
+import {PayNlPortal} from './helpers/paynl-objects';
+import payNlConfig from './config/config';
+
+test.describe('ideal payment test', () => {
+    test('should allow me to go to the checkout', async ({page, context}) => {
+        await setupCheckout(page, context, {
+            ...payNlConfig,
+            config: {
+                ...payNlConfig.config,
+                'payment/paynl_payment_ideal/active': 1,
+            }
+        });
+
+        const paymentMethod = new PaymentMethod(page, 'paynl_payment_ideal');
+        await paymentMethod.select();
+
+        const placeOrderButton = new PlaceOrderButton(page);
+        await placeOrderButton.click();
+
+        const molliePortal = new PayNlPortal(page);
+        await molliePortal.expectIssuerPage();
+    });
+});
