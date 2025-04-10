@@ -13,6 +13,7 @@ class RedirectResolver implements RedirectResolverInterface
     public function resolve(RedirectContext $redirectContext): false|string
     {
         $paymentMethod = $redirectContext->getPaymentMethod();
+        // @phpstan-ignore class.notFound
         if (false === $paymentMethod instanceof Paymentmethod) {
             return false;
         }
