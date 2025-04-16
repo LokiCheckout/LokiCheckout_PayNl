@@ -6,6 +6,10 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+## [0.0.3] - 16 April 2025
+### Fixed
+- Add Playwright tests
+
 ## [0.0.2] - 08 April 2025
 ### Added
 - Payment logos
