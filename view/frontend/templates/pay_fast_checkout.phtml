@@ -1,0 +1,72 @@
+<?php
+declare(strict_types=1);
+
+use Magento\Framework\View\Element\Template;
+use Paynl\Payment\ViewModel\FastCheckout;
+use Yireo\LokiComponents\Factory\ViewModelFactory;
+use Yireo\LokiFieldComponents\ViewModel\ImageOutput;
+
+/** @var Template $block */
+/** @var ViewModelFactory $viewModelFactory */
+/** @var FastCheckout $fastCheckout */
+
+$fastCheckout = $viewModelFactory->create(FastCheckout::class);
+if (false === $fastCheckout->getVisibility()) {
+    return;
+}
+
+$imageOutput = $viewModelFactory->create(ImageOutput::class);
+?>
+<div x-data="LokiModal">
+    <form action="/paynl/checkout/fastcheckoutstart" method="post">
+        <input type="hidden" value="" name="selected_estimate_shipping" id="selected_estimate_shipping"/>
+        <input type="hidden" value="" name="selected_estimate_country" id="selected_estimate_country"/>
+        <input type="hidden" value="" name="selected_estimate_zip" id="selected_estimate_zip"/>
+
+        <?php if ($fastCheckout->modalEnabled()): ?>
+            <button @click="toggleModal" :disabled="isModalOpen" title="Fast Checkout"
+                    class="rounded-md p-4 bg-[#c90066] text-white flex">
+                <?= $imageOutput->get('Paynl_Payment::images/fastCheckoutIdeal.png') ?>
+                <span class="pt-4"><?= __('Fast Checkout') ?></span>
+            </button>
+
+            <dialog x-ref="modal" class="border border-zinc-200 rounded-lg shadow-lg">
+                <div>
+                    <button @click="toggleModal" class="float-right m-4 cursor-pointer w-4">
+                        <?= $imageOutput->get('Yireo_LokiComponents::images/xmark.svg') ?>
+                    </button>
+
+                    <div class="modal-content">
+                        <div class="modal-header roboto-slab">
+                            <span><?= /* @escapeNotVerified */
+                                __('Order faster') ?></span> <?= /* @escapeNotVerified */
+                            __('with iDEAL fast checkout') ?>
+                        </div>
+                        <div class="modal-text">
+                            <p class="modal-description"><?= /* @escapeNotVerified */
+                                __('Create an iDEAL profile and save your address for your next order') ?></p>
+                        </div>
+                        <div class="modal-actions">
+                            <button class="button button-primary" type="submit" title="Fast Checkout"
+                                    data-mage-init='{"Paynl_Payment/js/fast-checkout-cart-view": {}}'>
+                                <span class="fastcheckout-button-modal"><?= /* @escapeNotVerified */
+                                    __('Fast Checkout') ?></span>
+                            </button>
+                            <button class="button button-secondary roboto-medium"
+                                    data-mage-init='{"Paynl_Payment/js/fast-checkout-modal-checkout": {}}'><?= /* @escapeNotVerified */
+                                __('Enter my own address and pay') ?></button>
+                        </div>
+                    </div>
+                </div>
+            </dialog>
+        <?php else: ?>
+
+            <button type="submit"
+                    title="Fast Checkout"
+                    class="action tocart primary paynl-fast_checkout-btn">
+                <?= __('Fast Checkout') ?>
+            </button>
+
+        <?php endif ?>
+    </form>
+</div>
