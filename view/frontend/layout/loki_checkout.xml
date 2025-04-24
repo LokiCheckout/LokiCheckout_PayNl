@@ -5,4 +5,16 @@
         <remove src="Paynl_Payment::css/payFastCheckout.css"/>
         <remove src="Paynl_Payment::css/payCheckout.css"/>
     </head>
+
+    <body>
+        <referenceBlock name="Custom_css" remove="true"/>
+
+        <referenceBlock name="loki-checkout.fast_checkout">
+            <block
+                name="paynl.fastcheckout.cart"
+                template="Yireo_LokiCheckoutPayNl::pay_fast_checkout.phtml"
+                ifconfig="payment/paynl_payment_ideal/fast_checkout_cart_enabled"
+            />
+        </referenceBlock>
+    </body>
 </page>
