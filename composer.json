@@ -7,7 +7,7 @@
     "require": {
         "magento/framework": "^103.0",
         "paynl/magento2-plugin": "^3.14",
-        "yireo/magento2-loki-checkout": "~0.0"
+        "yireo/magento2-loki-checkout": "~0.0 | ^1.0"
     },
     "license": "OSL-3.0",
     "autoload": {
