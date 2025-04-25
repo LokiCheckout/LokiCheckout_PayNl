@@ -8,6 +8,7 @@
 
     <body>
         <referenceBlock name="Custom_css" remove="true"/>
+        <referenceBlock name="fast.checkout.settings" remove="true"/>
 
         <referenceBlock name="loki-checkout.fast_checkout">
             <block
