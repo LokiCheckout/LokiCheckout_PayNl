@@ -1,8 +1,16 @@
 {
     "modules": [
         "Yireo_LokiCheckout",
+        "Yireo_LokiComponents",
+        "Magento_Sales",
+        "Magento_Store",
         "Paynl_Payment"
     ],
     "components": [],
-    "config": []
+    "config": [],
+    "tests": {
+        "unit": 0,
+        "integration": 0,
+        "functional": 2
+    }
 }
