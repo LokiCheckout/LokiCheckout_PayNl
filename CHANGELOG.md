@@ -6,6 +6,16 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+## [0.0.5] - 15 May 2025
+### Fixed
+- Rename FastCheckout to iDeal Fast Checkout
+- Apply LokiForm to submit form
+- Update composer dependencies
+- Set default of `fast_checkout_enabled` to 1
+- Add option for enabling/disabling fast checkout
+- Generate new MODULE.json with simple test count
+- Allow PHP 8.4 in CI
+
 ## [0.0.4] - 25 April 2025
 ### Fixed
 - Allow upgrading to LokiFieldComponents and LokiCheckout 1.0
