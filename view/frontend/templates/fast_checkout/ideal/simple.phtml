@@ -2,16 +2,16 @@
 declare(strict_types=1);
 
 use Magento\Framework\View\Element\Template;
-use Yireo\LokiCheckoutPayNl\ViewModel\FastCheckout;
+use Yireo\LokiCheckoutPayNl\ViewModel\IdealFastCheckout;
 use Yireo\LokiComponents\Factory\ViewModelFactory;
 use Yireo\LokiFieldComponents\ViewModel\ImageOutput;
 
 /** @var Template $block */
 /** @var ViewModelFactory $viewModelFactory */
-/** @var FastCheckout $fastCheckout */
+/** @var IdealFastCheckout $idealFastCheckout */
 
-$fastCheckout = $viewModelFactory->create(FastCheckout::class);
-$shippingAddress = $fastCheckout->getShippingAddress();
+$idealFastCheckout = $viewModelFactory->create(IdealFastCheckout::class);
+$shippingAddress = $idealFastCheckout->getShippingAddress();
 $imageOutput = $viewModelFactory->create(ImageOutput::class);
 ?>
 <form action="/paynl/checkout/fastcheckoutstart" method="post" x-data="LokiForm">

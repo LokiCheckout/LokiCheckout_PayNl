@@ -1,0 +1,27 @@
+<?php
+declare(strict_types=1);
+
+use Magento\Framework\View\Element\Template;
+use Yireo\LokiCheckoutPayNl\ViewModel\IdealFastCheckout;
+use Yireo\LokiCheckout\ViewModel\CheckoutState;
+use Yireo\LokiComponents\Factory\ViewModelFactory;
+use Yireo\LokiComponents\Util\Block\ChildRenderer;
+
+/** @var Template $block */
+/** @var ViewModelFactory $viewModelFactory */
+/** @var IdealFastCheckout $idealFastCheckout */
+/** @var CheckoutState $checkoutState */
+/** @var ChildRenderer $childRenderer */
+
+$idealFastCheckout = $viewModelFactory->create(IdealFastCheckout::class);
+if (false === $idealFastCheckout->enabled()) {
+    return;
+}
+?>
+<div>
+    <?php if ($idealFastCheckout->modalEnabled()): ?>
+        <?= $childRenderer->html($block, 'modal') ?>
+    <?php else: ?>
+        <?= $childRenderer->html($block, 'simple') ?>
+    <?php endif; ?>
+</div>

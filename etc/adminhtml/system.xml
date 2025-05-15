@@ -4,15 +4,15 @@
         <section id="yireo_loki_checkout">
             <group id="paynl" translate="label" type="text" sortOrder="1" showInDefault="1" showInWebsite="1" showInStore="1">
                 <label>PAY. options</label>
-                <field id="fast_checkout_enabled"
+                <field id="ideal_fast_checkout_enabled"
                        translate="label"
                        type="select"
                        sortOrder="1"
                        showInDefault="1"
                        showInWebsite="1"
                        showInStore="0">
-                    <label>Enable Fast Checkout</label>
-                    <tooltip>Toggle this setting to enable or disable PAY Fast Checkout options within the checkout.</tooltip>
+                    <label>Enable iDEAL Fast Checkout</label>
+                    <tooltip>Toggle this setting to enable or disable PAY iDEAL Fast Checkout options within the checkout.</tooltip>
                     <source_model>Magento\Config\Model\Config\Source\Yesno</source_model>
                 </field>
             </group>

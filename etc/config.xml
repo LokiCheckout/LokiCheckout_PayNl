@@ -3,7 +3,7 @@
     <default>
         <yireo_loki_checkout>
             <paynl>
-                <fast_checkout_enabled>1</fast_checkout_enabled>
+                <ideal_fast_checkout_enabled>1</ideal_fast_checkout_enabled>
             </paynl>
         </yireo_loki_checkout>
     </default>
