@@ -2,6 +2,8 @@
     "modules": [
         "Yireo_LokiCheckout",
         "Yireo_LokiComponents",
+        "Magento_Backend",
+        "Magento_Quote",
         "Magento_Sales",
         "Magento_Store",
         "Paynl_Payment"
