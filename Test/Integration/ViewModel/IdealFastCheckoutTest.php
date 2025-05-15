@@ -9,6 +9,7 @@ use Magento\Customer\Test\Fixture\Customer as CustomerFixture;
 use Magento\Framework\App\ObjectManager;
 use Magento\TestFramework\Fixture\Config as ConfigFixture;
 use Magento\TestFramework\Fixture\DataFixture;
+use Magento\TestFramework\Fixture\DataFixtureStorageManager;
 use PHPUnit\Framework\TestCase;
 use Yireo\IntegrationTestHelper\Test\Integration\Traits\GetObjectManager;
 use Yireo\LokiCheckoutPayNl\ViewModel\IdealFastCheckout;
@@ -31,12 +32,15 @@ final class IdealFastCheckoutTest extends TestCase
         $this->assertEquals(true, $actual);
     }
 
-    #[DataFixture(CustomerFixture::class)]
+    #[DataFixture(CustomerFixture::class, as: 'customer')]
     #[ConfigFixture('payment/paynl_payment_ideal/fast_checkout_guest_only', 1)]
     final public function testIsDisabled(): void
     {
+        $fixtures = DataFixtureStorageManager::getStorage();
+        $customer = $fixtures->get('customer');
+
         $customerSession = $this->getObjectManager()->get(CustomerSession::class);
-        $customerSession->setCustomerId(1);
+        $customerSession->loginById($customer->getId());
 
         $idealFastCheckout = $this->getInstance();
         $actual = $idealFastCheckout->enabled();
@@ -51,6 +55,7 @@ final class IdealFastCheckoutTest extends TestCase
         $this->assertEquals(true, $actual);
     }
 
+    #[ConfigFixture('payment/paynl_payment_ideal/fast_checkout_show_modal', 0)]
     #[ConfigFixture('payment/paynl_payment_ideal/fast_checkout_show_modal', 0, 'store', 'default')]
     final public function testModalIsDisabled(): void
     {
