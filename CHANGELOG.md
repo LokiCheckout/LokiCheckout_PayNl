@@ -6,6 +6,10 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+## [1.0.0] - 19 May 2025
+### Fixed
+- Add integration tests
+
 ## [0.0.5] - 15 May 2025
 ### Fixed
 - Rename FastCheckout to iDeal Fast Checkout
