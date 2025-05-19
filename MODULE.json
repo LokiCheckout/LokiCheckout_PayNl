@@ -2,7 +2,10 @@
     "modules": [
         "Yireo_LokiCheckout",
         "Yireo_LokiComponents",
+        "Yireo_IntegrationTestHelper",
         "Magento_Backend",
+        "Magento_Config",
+        "Magento_Customer",
         "Magento_Quote",
         "Magento_Sales",
         "Magento_Store",
