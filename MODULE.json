@@ -18,7 +18,7 @@
     ],
     "tests": {
         "unit": 0,
-        "integration": 0,
+        "integration": 11,
         "functional": 2
     }
 }
