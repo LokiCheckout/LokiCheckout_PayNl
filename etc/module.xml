@@ -3,8 +3,8 @@
     <module name="Yireo_LokiCheckoutPayNl">
         <sequence>
             <module name="Yireo_LokiCheckout"/>
+            <module name="Yireo_LokiFieldComponents"/>
             <module name="Yireo_LokiComponents"/>
-            <module name="Yireo_IntegrationTestHelper"/>
             <module name="Magento_Backend"/>
             <module name="Magento_Config"/>
             <module name="Magento_Customer"/>

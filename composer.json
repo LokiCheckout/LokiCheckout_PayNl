@@ -11,7 +11,6 @@
         "magento/module-quote": "^101.0",
         "magento/module-sales": "^102.0 | ^103.0",
         "paynl/magento2-plugin": "^3.14",
-        "yireo/magento2-integration-test-helper": "^0.0",
         "yireo/magento2-loki-checkout": "~0.0 | ^1.0",
         "yireo/magento2-loki-components": "^1.0",
         "ext-pcre": "*"
