@@ -1,6 +1,6 @@
 import {PaymentMethod, PlaceOrderButton} from '@loki/checkout-objects';
 import {setupCheckout} from '@loki/setup-checkout';
-import {test, expect} from '@playwright/test';
+import {test, expect} from '@loki/test';
 
 import {PayNlPortal} from './helpers/paynl-objects';
 import payNlConfig from './config/config';
