@@ -1,8 +1,8 @@
 {
     "modules": [
         "Yireo_LokiCheckout",
+        "Yireo_LokiFieldComponents",
         "Yireo_LokiComponents",
-        "Yireo_IntegrationTestHelper",
         "Magento_Backend",
         "Magento_Config",
         "Magento_Customer",
