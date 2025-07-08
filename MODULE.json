@@ -1,15 +1,16 @@
 {
     "modules": [
-        "Yireo_LokiCheckout",
-        "Yireo_LokiFieldComponents",
-        "Yireo_LokiComponents",
         "Magento_Backend",
         "Magento_Config",
         "Magento_Customer",
         "Magento_Quote",
         "Magento_Sales",
         "Magento_Store",
-        "Paynl_Payment"
+        "Paynl_Payment",
+        "Yireo_IntegrationTestHelper",
+        "Yireo_LokiCheckout",
+        "Yireo_LokiComponents",
+        "Yireo_LokiFieldComponents"
     ],
     "components": [],
     "config": [
