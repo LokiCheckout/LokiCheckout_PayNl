@@ -2,9 +2,9 @@
 declare(strict_types=1);
 
 use Magento\Framework\View\Element\Template;
-use Yireo\LokiCheckoutPayNl\ViewModel\IdealFastCheckout;
-use Yireo\LokiComponents\Factory\ViewModelFactory;
-use Yireo\LokiFieldComponents\ViewModel\ImageOutput;
+use LokiCheckout\PayNl\ViewModel\IdealFastCheckout;
+use Loki\Components\Factory\ViewModelFactory;
+use Loki\Field\ViewModel\ImageOutput;
 
 /** @var Template $block */
 /** @var ViewModelFactory $viewModelFactory */
@@ -23,7 +23,7 @@ $imageOutput = $viewModelFactory->create(ImageOutput::class);
     <dialog x-ref="modal" class="border border-zinc-200 rounded-lg shadow-lg p-10">
         <div>
             <a @click="toggleModal" class="float-right m-4 cursor-pointer w-4">
-                <?= $imageOutput->get('Yireo_LokiComponents::images/xmark.svg') ?>
+                <?= $imageOutput->get('Loki_Components::images/xmark.svg') ?>
             </a>
 
             <div class="flex flex-wrap">

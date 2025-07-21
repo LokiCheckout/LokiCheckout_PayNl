@@ -2,13 +2,13 @@
 
 declare(strict_types=1);
 
-namespace Yireo\LokiCheckoutPayNl\Test\Integration\Payment\Redirect;
+namespace LokiCheckout\PayNl\Test\Integration\Payment\Redirect;
 
 use Magento\Framework\App\ObjectManager;
 use PHPUnit\Framework\TestCase;
 use Yireo\IntegrationTestHelper\Test\Integration\Traits\GetObjectManager;
-use Yireo\LokiCheckout\Step\FinalStep\RedirectContext;
-use Yireo\LokiCheckoutPayNl\Payment\Redirect\RedirectResolver;
+use LokiCheckout\Core\Step\FinalStep\RedirectContext;
+use LokiCheckout\PayNl\Payment\Redirect\RedirectResolver;
 
 final class RedirectResolverTest extends TestCase
 {

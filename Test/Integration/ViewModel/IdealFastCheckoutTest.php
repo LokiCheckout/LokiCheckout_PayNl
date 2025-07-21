@@ -2,7 +2,7 @@
 
 declare(strict_types=1);
 
-namespace Yireo\LokiCheckoutPayNl\Test\Integration\ViewModel;
+namespace LokiCheckout\PayNl\Test\Integration\ViewModel;
 
 use Magento\Customer\Model\Session as CustomerSession;
 use Magento\Customer\Test\Fixture\Customer as CustomerFixture;
@@ -12,7 +12,7 @@ use Magento\TestFramework\Fixture\DataFixture;
 use Magento\TestFramework\Fixture\DataFixtureStorageManager;
 use PHPUnit\Framework\TestCase;
 use Yireo\IntegrationTestHelper\Test\Integration\Traits\GetObjectManager;
-use Yireo\LokiCheckoutPayNl\ViewModel\IdealFastCheckout;
+use LokiCheckout\PayNl\ViewModel\IdealFastCheckout;
 
 final class IdealFastCheckoutTest extends TestCase
 {

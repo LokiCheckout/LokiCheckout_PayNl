@@ -2,7 +2,7 @@
 
 declare(strict_types=1);
 
-namespace Yireo\LokiCheckoutPayNl\Test\Integration;
+namespace LokiCheckout\PayNl\Test\Integration;
 
 use Magento\Catalog\Test\Fixture\Product as ProductFixture;
 use Magento\Quote\Test\Fixture\AddProductToCart as AddProductToCartFixture;
@@ -11,7 +11,7 @@ use Magento\TestFramework\Fixture\AppArea;
 use Magento\TestFramework\Fixture\DataFixture;
 use Yireo\IntegrationTestHelper\Test\Integration\Traits\AssertModuleIsEnabled;
 use Yireo\IntegrationTestHelper\Test\Integration\Traits\AssertModuleIsRegistered;
-use Yireo\LokiCheckout\Test\Integration\LokiCheckoutPageTestCase;
+use LokiCheckout\Core\Test\Integration\LokiCheckoutPageTestCase;
 
 #[
     DataFixture(ProductFixture::class, ['sku' => 'simple-product-001'], as: 'product'),

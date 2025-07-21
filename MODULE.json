@@ -8,14 +8,14 @@
         "Magento_Store",
         "Paynl_Payment",
         "Yireo_IntegrationTestHelper",
-        "Yireo_LokiCheckout",
-        "Yireo_LokiComponents",
-        "Yireo_LokiFieldComponents"
+        "LokiCheckout_Core",
+        "Loki_Components",
+        "Loki_FieldComponents"
     ],
     "components": [],
     "config": [
         {
-            "path": "yireo_loki_checkout\/paynl\/ideal_fast_checkout_enabled",
+            "path": "loki_checkout\/paynl\/ideal_fast_checkout_enabled",
             "label": "PAY. options > Enable iDEAL Fast Checkout",
             "description": "Toggle this setting to enable or disable PAY iDEAL Fast Checkout options within the checkout."
         }

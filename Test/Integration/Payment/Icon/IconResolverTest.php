@@ -2,13 +2,13 @@
 
 declare(strict_types=1);
 
-namespace Yireo\LokiCheckoutPayNl\Test\Integration\Payment\Icon;
+namespace LokiCheckout\PayNl\Test\Integration\Payment\Icon;
 
 use Magento\Framework\App\ObjectManager;
 use PHPUnit\Framework\TestCase;
 use Yireo\IntegrationTestHelper\Test\Integration\Traits\GetObjectManager;
-use Yireo\LokiCheckout\Payment\Icon\IconResolverContext;
-use Yireo\LokiCheckoutPayNl\Payment\Icon\IconResolver;
+use LokiCheckout\Core\Payment\Icon\IconResolverContext;
+use LokiCheckout\PayNl\Payment\Icon\IconResolver;
 
 final class IconResolverTest extends TestCase
 {

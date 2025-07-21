@@ -1,11 +1,11 @@
 <?php declare(strict_types=1);
 
-namespace Yireo\LokiCheckoutPayNl\ViewModel;
+namespace LokiCheckout\PayNl\ViewModel;
 
 use Magento\Framework\View\Element\Block\ArgumentInterface;
 use Magento\Quote\Api\Data\AddressInterface;
 use Paynl\Payment\ViewModel\FastCheckout;
-use Yireo\LokiCheckout\ViewModel\CheckoutState;
+use LokiCheckout\Core\ViewModel\CheckoutState;
 
 class IdealFastCheckout implements ArgumentInterface
 {

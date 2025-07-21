@@ -1,12 +1,12 @@
 <?php declare(strict_types=1);
 
-namespace Yireo\LokiCheckoutPayNl\Payment\Redirect;
+namespace LokiCheckout\PayNl\Payment\Redirect;
 
 use Magento\Sales\Api\Data\OrderInterface;
 use Magento\Sales\Model\Order;
 use Paynl\Payment\Model\Paymentmethod\Paymentmethod;
-use Yireo\LokiCheckout\Payment\Redirect\RedirectResolverInterface;
-use Yireo\LokiCheckout\Step\FinalStep\RedirectContext;
+use LokiCheckout\Core\Payment\Redirect\RedirectResolverInterface;
+use LokiCheckout\Core\Step\FinalStep\RedirectContext;
 
 class RedirectResolver implements RedirectResolverInterface
 {

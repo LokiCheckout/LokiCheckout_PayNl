@@ -12,16 +12,16 @@
         <referenceBlock name="loki-checkout.fast_checkout">
             <block
                 name="loki-checkout-pay-nl.fast-checkout.ideal"
-                template="Yireo_LokiCheckoutPayNl::fast_checkout/ideal.phtml"
-                ifconfig="yireo_loki_checkout/paynl/ideal_fast_checkout_enabled"
+                template="LokiCheckout_PayNl::fast_checkout/ideal.phtml"
+                ifconfig="loki_checkout/paynl/ideal_fast_checkout_enabled"
             >
                 <block
                     name="loki-checkout-pay-nl.fast-checkout.ideal.modal" as="modal"
-                    template="Yireo_LokiCheckoutPayNl::fast_checkout/ideal/modal.phtml"
+                    template="LokiCheckout_PayNl::fast_checkout/ideal/modal.phtml"
                     />
                 <block
                     name="loki-checkout-pay-nl.fast-checkout.ideal.simple" as="simple"
-                    template="Yireo_LokiCheckoutPayNl::fast_checkout/ideal/simple.phtml"
+                    template="LokiCheckout_PayNl::fast_checkout/ideal/simple.phtml"
                 />
             </block>
         </referenceBlock>

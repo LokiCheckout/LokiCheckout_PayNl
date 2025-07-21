@@ -3,7 +3,7 @@ import {setupCheckout} from '@loki/setup-checkout';
 import {test, expect} from '@loki/test';
 import payNlConfig from './config/config';
 
-test.describe('Yireo_LokiCheckoutPayNl test', () => {
+test.describe('LokiCheckout_PayNl test', () => {
     test('should allow me to go to the checkout', async ({page, context}) => {
         await setupCheckout(page, context, {
             ...payNlConfig,

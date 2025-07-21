@@ -2,7 +2,7 @@
 
 declare(strict_types=1);
 
-namespace Yireo\LokiCheckoutPayNl\Test\Integration;
+namespace LokiCheckout\PayNl\Test\Integration;
 
 use PHPUnit\Framework\TestCase;
 use Yireo\IntegrationTestHelper\Test\Integration\Traits\AssertModuleIsEnabled;
@@ -16,9 +16,9 @@ final class ModuleTest extends TestCase
     final public function testModule(): void
     {
         $moduleNames = [
-            'Yireo_LokiCheckoutPayNl',
-            'Yireo_LokiCheckout',
-            'Yireo_LokiComponents',
+            'LokiCheckout_PayNl',
+            'LokiCheckout_Core',
+            'Loki_Components',
             'Magento_Backend',
             'Magento_Quote',
             'Magento_Sales',

@@ -3,4 +3,4 @@ declare(strict_types=1);
 
 use Magento\Framework\Component\ComponentRegistrar;
 
-ComponentRegistrar::register(ComponentRegistrar::MODULE, 'Yireo_LokiCheckoutPayNl', __DIR__);
+ComponentRegistrar::register(ComponentRegistrar::MODULE, 'LokiCheckout_PayNl', __DIR__);
