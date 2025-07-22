@@ -11,6 +11,7 @@
             <module name="Paynl_Payment"/>
             <module name="Yireo_IntegrationTestHelper"/>
             <module name="LokiCheckout_Core"/>
+            <module name="Loki_FieldComponents"/>
             <module name="Loki_Components"/>
         </sequence>
     </module>
