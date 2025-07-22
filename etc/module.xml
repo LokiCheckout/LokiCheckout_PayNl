@@ -12,7 +12,6 @@
             <module name="Yireo_IntegrationTestHelper"/>
             <module name="LokiCheckout_Core"/>
             <module name="Loki_Components"/>
-            <module name="Loki_FieldComponents"/>
         </sequence>
     </module>
 </config>
