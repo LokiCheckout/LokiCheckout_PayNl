@@ -19,7 +19,7 @@
         "ext-pcre": "*"
     },
     "require-dev": {
-        "yireo/magento2-integration-test-helper": "~0.0.17"
+        "yireo/magento2-integration-test-helper": "~0.0"
     },
     "license": "OSL-3.0",
     "autoload": {
