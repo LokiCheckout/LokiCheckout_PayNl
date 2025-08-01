@@ -6,6 +6,14 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+## [2.0.1] - 01 August 2025
+### Fixed
+- Add `Loki_FieldComponents` anyway
+
+## [2.0.0] - 01 July 2025
+### Fixed
+- Upgrade to major 2
+
 ## [1.0.1] - 08 July 2025
 ### Fixed
 - Use Loki test-case in Playwright to detect JS errors automatically
