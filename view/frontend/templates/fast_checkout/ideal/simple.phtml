@@ -19,7 +19,7 @@ $imageOutput = $viewModelFactory->create(ImageOutput::class);
     <input type="hidden" value="<?= $escaper->escapeHtml($shippingAddress->getPostcode()) ?>" name="selected_estimate_zip"/>
     <a @click="submit" title="Fast Checkout"
        class="cursor-pointer rounded-md p-4 bg-[#c90066] text-white flex">
-        <?= $escaper->escapeHtml($imageOutput->get('Paynl_Payment::images/fastCheckoutIdeal.png')) ?>
+        <?= /* @noEscape */ $imageOutput->get('Paynl_Payment::images/fastCheckoutIdeal.png') ?>
         <span class="pt-4"><?= $escaper->escapeHtml(__('Fast Checkout')) ?></span>
     </a>
 
