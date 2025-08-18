@@ -20,10 +20,8 @@ if (false === $idealFastCheckout->enabled()) {
 ?>
 <div>
     <?php if ($idealFastCheckout->modalEnabled()): ?>
-        <?= /* @noEscape */
-$childRenderer->html($block, 'modal') ?>
+        <?= /* @noEscape */ $childRenderer->html($block, 'modal') ?>
     <?php else: ?>
-        <?= /* @noEscape */
-$childRenderer->html($block, 'simple') ?>
+        <?= /* @noEscape */ $childRenderer->html($block, 'simple') ?>
     <?php endif; ?>
 </div>

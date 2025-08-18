@@ -23,6 +23,5 @@ $imageOutput = $viewModelFactory->create(ImageOutput::class);
         <span class="pt-4"><?= $escaper->escapeHtml(__('Fast Checkout')) ?></span>
     </a>
 
-    <?php echo /* @noEscape */
-$block->getBlockHtml('formkey') ?>
+    <?php echo /* @noEscape */ $block->getBlockHtml('formkey') ?>
 </form>

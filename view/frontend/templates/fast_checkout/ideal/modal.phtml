@@ -47,8 +47,7 @@ $imageOutput = $viewModelFactory->create(ImageOutput::class);
                                 title="Fast Checkout">
                             <?= $escaper->escapeHtml(__('Fast Checkout')) ?>
                         </button>
-                        <?php echo /* @noEscape */
-$block->getBlockHtml('formkey') ?>
+                        <?php echo /* @noEscape */ $block->getBlockHtml('formkey') ?>
                     </form>
                     <button @click="toggleModal"
                             class="w-full border border-zinc-400 rounded-full p-4 my-2 font-bold">
