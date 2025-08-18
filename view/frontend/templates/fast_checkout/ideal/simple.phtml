@@ -15,13 +15,14 @@ $shippingAddress = $idealFastCheckout->getShippingAddress();
 $imageOutput = $viewModelFactory->create(ImageOutput::class);
 ?>
 <form action="/paynl/checkout/fastcheckoutstart" method="post" x-data="LokiForm">
-    <input type="hidden" value="<?= $shippingAddress->getCountryId() ?>" name="selected_estimate_country"/>
-    <input type="hidden" value="<?= $shippingAddress->getPostcode() ?>" name="selected_estimate_zip"/>
+    <input type="hidden" value="<?= $escaper->escapeHtml($shippingAddress->getCountryId()) ?>" name="selected_estimate_country"/>
+    <input type="hidden" value="<?= $escaper->escapeHtml($shippingAddress->getPostcode()) ?>" name="selected_estimate_zip"/>
     <a @click="submit" title="Fast Checkout"
        class="cursor-pointer rounded-md p-4 bg-[#c90066] text-white flex">
-        <?= $imageOutput->get('Paynl_Payment::images/fastCheckoutIdeal.png') ?>
-        <span class="pt-4"><?= __('Fast Checkout') ?></span>
+        <?= $escaper->escapeHtml($imageOutput->get('Paynl_Payment::images/fastCheckoutIdeal.png')) ?>
+        <span class="pt-4"><?= $escaper->escapeHtml(__('Fast Checkout')) ?></span>
     </a>
 
-    <?php echo $block->getBlockHtml('formkey') ?>
+    <?php echo /* @noEscape */
+$block->getBlockHtml('formkey') ?>
 </form>
