@@ -6,6 +6,10 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+## [2.0.5] - 19 August 2025
+### Fixed
+- Fix final SVG
+
 ## [2.0.4] - 18 August 2025
 ### Fixed
 - Prevent escaping of SVGs
