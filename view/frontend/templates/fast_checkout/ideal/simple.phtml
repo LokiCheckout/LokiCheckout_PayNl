@@ -3,11 +3,13 @@ declare(strict_types=1);
 
 /** @version 2.0.5 */
 
+use Magento\Framework\Escaper;
 use Magento\Framework\View\Element\Template;
 use LokiCheckout\PayNl\ViewModel\IdealFastCheckout;
 use Loki\Components\Factory\ViewModelFactory;
 use Loki\Field\ViewModel\ImageOutput;
 
+/** @var Escaper $escaper */
 /** @var Template $block */
 /** @var ViewModelFactory $viewModelFactory */
 /** @var IdealFastCheckout $idealFastCheckout */
@@ -20,9 +22,9 @@ $imageOutput = $viewModelFactory->create(ImageOutput::class);
     <input type="hidden" value="<?= $escaper->escapeHtml($shippingAddress->getCountryId()) ?>" name="selected_estimate_country"/>
     <input type="hidden" value="<?= $escaper->escapeHtml($shippingAddress->getPostcode()) ?>" name="selected_estimate_zip"/>
     <a @click="submit" title="Fast Checkout"
-       class="cursor-pointer rounded-md p-4 bg-[#c90066] text-white flex">
+       class="<?= $css('cursor-pointer rounded-md p-4 bg-[#c90066] text-white flex', '@todo') ?>">
         <?= /* @noEscape */ $imageOutput->get('Paynl_Payment::images/fastCheckoutIdeal.png') ?>
-        <span class="pt-4"><?= $escaper->escapeHtml(__('Fast Checkout')) ?></span>
+        <span class="<?= $css('pt-4', '@todo') ?>"><?= $escaper->escapeHtml(__('Fast Checkout')) ?></span>
     </a>
 
     <?php echo /* @noEscape */ $block->getBlockHtml('formkey') ?>
