@@ -6,6 +6,12 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+## [2.0.6] - 21 August 2025
+### Fixed
+- Add dependency with loki/magento2-css-utils
+- Declare used PHP namespaces
+- Document latest version of template
+
 ## [2.0.5] - 19 August 2025
 ### Fixed
 - Fix final SVG
