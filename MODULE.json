@@ -9,8 +9,8 @@
         "Paynl_Payment",
         "Yireo_IntegrationTestHelper",
         "LokiCheckout_Core",
-        "Loki_Components",
-        "Loki_FieldComponents"
+        "Loki_FieldComponents",
+        "Loki_Components"
     ],
     "components": [],
     "config": [
