@@ -6,6 +6,10 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+## [2.0.9] - 02 September 2025
+### Fixed
+- Refactor Loki-library location in Playwright tests
+
 ## [2.0.8] - 28 August 2025
 ### Fixed
 - Add CI files
