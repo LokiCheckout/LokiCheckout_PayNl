@@ -1,5 +1,8 @@
 {
-    "modules": [
+    "sequence": [
+        "LokiCheckout_Core",
+        "Loki_Components",
+        "Loki_FieldComponents",
         "Magento_Backend",
         "Magento_Config",
         "Magento_Customer",
@@ -7,10 +10,37 @@
         "Magento_Sales",
         "Magento_Store",
         "Paynl_Payment",
-        "Yireo_IntegrationTestHelper",
+        "Yireo_IntegrationTestHelper"
+    ],
+    "modules": [
         "LokiCheckout_Core",
+        "Loki_Components",
+        "Loki_CssUtils",
         "Loki_FieldComponents",
-        "Loki_Components"
+        "Loki_MapComponents",
+        "Magento_Backend",
+        "Magento_Catalog",
+        "Magento_Checkout",
+        "Magento_CheckoutAgreements",
+        "Magento_Config",
+        "Magento_Customer",
+        "Magento_Directory",
+        "Magento_Eav",
+        "Magento_MediaStorage",
+        "Magento_Newsletter",
+        "Magento_Payment",
+        "Magento_Quote",
+        "Magento_Rule",
+        "Magento_Sales",
+        "Magento_SalesSequence",
+        "Magento_Shipping",
+        "Magento_Store",
+        "Magento_Theme",
+        "Magento_Vault",
+        "Paynl_Payment",
+        "Yireo_CspUtilities",
+        "Yireo_HyvaThemeAutoRegistration",
+        "Yireo_IntegrationTestHelper"
     ],
     "components": [],
     "config": [
