@@ -27,7 +27,7 @@ $imageOutput = $viewModelFactory->create(ImageOutput::class);
     <dialog x-ref="modal" class="<?= $css('border border-zinc-200 rounded-lg shadow-lg p-10', '@todo') ?>">
         <div>
             <a @click.prevent="toggleModal" class="<?= $css('float-right m-4 cursor-pointer w-4', '@todo') ?>">
-                <?= /** @noEscape */ $imageOutput->get('Loki_Components::images/xmark.svg') ?>
+                <?= /** @noEscape */ $imageOutput->icon('xmark', $block) ?>
             </a>
 
             <div class="<?= $css('flex flex-wrap', '@todo') ?>">
