@@ -27,7 +27,7 @@ $shippingAddress = $idealFastCheckout->getShippingAddress();
     <dialog x-ref="modal" class="<?= $css('border border-zinc-200 rounded-lg shadow-lg p-10', '@todo') ?>">
         <div>
             <a @click.prevent="toggleModal" class="<?= $css('float-right m-4 cursor-pointer w-4', '@todo') ?>">
-                <?= /** @noEscape */ $imageRenderer->icon('xmark') ?>
+                <?= /** @noEscape */ $imageRenderer->icon($block, 'xmark') ?>
             </a>
 
             <div class="<?= $css('flex flex-wrap', '@todo') ?>">
