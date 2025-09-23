@@ -7,7 +7,7 @@ use Magento\Framework\Escaper;
 use Magento\Framework\View\Element\Template;
 use LokiCheckout\PayNl\ViewModel\IdealFastCheckout;
 use Loki\Components\Factory\ViewModelFactory;
-use Loki\Components\Util\ImageOutput;
+use Loki\Components\Util\Block\ImageRenderer;
 
 /** @var Escaper $escaper */
 /** @var Template $block */
@@ -15,24 +15,24 @@ use Loki\Components\Util\ImageOutput;
 /** @var IdealFastCheckout $idealFastCheckout */
 $idealFastCheckout = $viewModelFactory->create(IdealFastCheckout::class);
 $shippingAddress = $idealFastCheckout->getShippingAddress();
-$imageOutput = $viewModelFactory->create(ImageOutput::class);
+
 ?>
 <div x-data="LokiModal">
     <a @click.prevent="toggleModal" :disabled="isModalOpen" title="Fast Checkout"
        class="<?= $css('cursor-pointer rounded-md p-4 bg-[#c90066] text-white flex', '@todo') ?>">
-        <?= /** @noEscape */ $imageOutput->get('Paynl_Payment::images/fastCheckoutIdeal.png') ?>
+        <?= /** @noEscape */ $imageRenderer->get('Paynl_Payment::images/fastCheckoutIdeal.png') ?>
         <span class="<?= $css('pt-4', '@todo') ?>"><?= $escaper->escapeHtml(__('Fast Checkout')) ?></span>
     </a>
 
     <dialog x-ref="modal" class="<?= $css('border border-zinc-200 rounded-lg shadow-lg p-10', '@todo') ?>">
         <div>
             <a @click.prevent="toggleModal" class="<?= $css('float-right m-4 cursor-pointer w-4', '@todo') ?>">
-                <?= /** @noEscape */ $imageOutput->icon('xmark', $block) ?>
+                <?= /** @noEscape */ $imageRenderer->icon('xmark') ?>
             </a>
 
             <div class="<?= $css('flex flex-wrap', '@todo') ?>">
                 <div class="<?= $css('w-64 p-4', '@todo') ?>">
-                    <?= /** @noEscape */ $imageOutput->get('Paynl_Payment::images/ideal-visual.webp') ?>
+                    <?= /** @noEscape */ $imageRenderer->get('Paynl_Payment::images/ideal-visual.webp') ?>
                 </div>
                 <div class="<?= $css('p-4', '@todo') ?>">
                     <div class="<?= $css('text-3xl', '@todo') ?>">
