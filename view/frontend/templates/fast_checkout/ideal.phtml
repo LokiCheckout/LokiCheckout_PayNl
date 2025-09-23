@@ -22,8 +22,8 @@ if (false === $idealFastCheckout->enabled()) {
 ?>
 <div>
     <?php if ($idealFastCheckout->modalEnabled()): ?>
-        <?= /* @noEscape */ $childRenderer->html('modal') ?>
+        <?= /* @noEscape */ $childRenderer->html($block, 'modal') ?>
     <?php else: ?>
-        <?= /* @noEscape */ $childRenderer->html('simple') ?>
+        <?= /* @noEscape */ $childRenderer->html($block, 'simple') ?>
     <?php endif; ?>
 </div>
