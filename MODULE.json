@@ -46,7 +46,7 @@
     "components": [],
     "config": [
         {
-            "path": "loki_checkout\/paynl\/ideal_fast_checkout_enabled",
+            "path": "loki_checkout/paynl/ideal_fast_checkout_enabled",
             "label": "PAY. options > Enable iDEAL Fast Checkout",
             "description": "Toggle this setting to enable or disable PAY iDEAL Fast Checkout options within the checkout."
         }
@@ -55,5 +55,6 @@
         "unit": 0,
         "integration": 11,
         "functional": 2
-    }
+    },
+    "phpcs_severity": "9"
 }
