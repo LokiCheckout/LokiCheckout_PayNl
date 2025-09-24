@@ -6,6 +6,12 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+## [2.0.11] - 24 September 2025
+### Fixed
+- Remove redundant CSS classes from icon containers
+- Implement new imageRenderer
+- Add `.prevent` modifier to `@click` event handler
+
 ## [2.0.10] - 04 September 2025
 ### Fixed
 - Copy generic CI/CD files
