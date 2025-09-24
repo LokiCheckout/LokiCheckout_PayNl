@@ -56,5 +56,6 @@
         "integration": 11,
         "functional": 2
     },
-    "phpcs_severity": "9"
+    "phpcs_severity": "9",
+    "phpstan_level": "1"
 }
