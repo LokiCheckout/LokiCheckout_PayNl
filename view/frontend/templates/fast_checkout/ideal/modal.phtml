@@ -27,7 +27,7 @@ $shippingAddress = $idealFastCheckout->getShippingAddress();
     <dialog x-ref="modal" class="<?= $escaper->escapeHtmlAttr($css('border border-zinc-200 rounded-lg shadow-lg p-10', '@todo')) ?>">
         <div>
             <a @click.prevent="toggleModal" class="<?= $escaper->escapeHtmlAttr($css('float-right m-4 cursor-pointer w-4', '@todo')) ?>">
-                <?= $escaper->escapeHtml($imageRenderer->icon($block, 'xmark')) ?>
+                <?= /* @noEscape */ $imageRenderer->icon($block, 'xmark') ?>
             </a>
 
             <div class="<?= $escaper->escapeHtmlAttr($css('flex flex-wrap', '@todo')) ?>">
