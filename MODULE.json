@@ -51,9 +51,5 @@
             "description": "Toggle this setting to enable or disable PAY iDEAL Fast Checkout options within the checkout."
         }
     ],
-    "tests": {
-        "unit": 0,
-        "integration": 11,
-        "functional": 2
-    }
+    "tests": []
 }
