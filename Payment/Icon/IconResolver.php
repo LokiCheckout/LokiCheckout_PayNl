@@ -26,6 +26,6 @@ class IconResolver implements IconResolverInterface
             return false;
         }
 
-        return '<img src="'.$this->config->getIconUrl($paymentMethodCode).'" />';
+        return '<img class="payment-icon '.$paymentMethodCode.'" src="'.$this->config->getIconUrl($paymentMethodCode).'" />';
     }
 }
