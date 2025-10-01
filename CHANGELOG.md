@@ -6,6 +6,11 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+## [2.0.15] - 01 October 2025
+### Fixed
+- Improve image rendering
+- Fix escaping
+
 ## [2.0.14] - 30 September 2025
 ### Fixed
 - Add CSS class to icon
