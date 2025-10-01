@@ -22,9 +22,9 @@ $shippingAddress = $idealFastCheckout->getShippingAddress();
     <input type="hidden" value="<?= $escaper->escapeHtml($shippingAddress->getCountryId()) ?>" name="selected_estimate_country"/>
     <input type="hidden" value="<?= $escaper->escapeHtml($shippingAddress->getPostcode()) ?>" name="selected_estimate_zip"/>
     <a @click.prevent="submit" title="Fast Checkout"
-       class="<?= $escaper->escapeHtmlAttr($css('cursor-pointer rounded-md p-4 bg-[#c90066] text-white flex', '@todo')) ?>">
+       class="<?= $escaper->escapeHtmlAttr($css('cursor-pointer rounded-md p-4 bg-[#c90066] text-white flex', 'anchor')) ?>">
         <?= /* @noEscape */ $imageRenderer->get('Paynl_Payment::images/fastCheckoutIdeal.png') ?>
-        <span class="<?= $escaper->escapeHtmlAttr($css('pt-4', '@todo')) ?>"><?= $escaper->escapeHtml(__('Fast Checkout')) ?></span>
+        <span class="<?= $escaper->escapeHtmlAttr($css('pt-4', 'anchor-span')) ?>"><?= $escaper->escapeHtml(__('Fast Checkout')) ?></span>
     </a>
 
     <?php echo /* @noEscape */ $block->getBlockHtml('formkey') ?>
