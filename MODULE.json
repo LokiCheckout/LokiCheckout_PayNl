@@ -40,7 +40,6 @@
         "Magento_Vault",
         "Paynl_Payment",
         "Yireo_CspUtilities",
-        "Yireo_HyvaThemeAutoRegistration",
         "Yireo_IntegrationTestHelper"
     ],
     "components": [],
@@ -51,5 +50,9 @@
             "description": "Toggle this setting to enable or disable PAY iDEAL Fast Checkout options within the checkout."
         }
     ],
-    "tests": []
+    "tests": {
+        "unit": 0,
+        "integration": 11,
+        "functional": 2
+    }
 }
