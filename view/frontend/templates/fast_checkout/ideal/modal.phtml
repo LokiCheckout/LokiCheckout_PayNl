@@ -13,6 +13,8 @@ use Loki\Components\Util\Block\ImageRenderer;
 /** @var Template $block */
 /** @var ViewModelFactory $viewModelFactory */
 /** @var IdealFastCheckout $idealFastCheckout */
+/** @var ImageRenderer $imageRenderer */
+
 $idealFastCheckout = $viewModelFactory->create(IdealFastCheckout::class);
 $shippingAddress = $idealFastCheckout->getShippingAddress();
 
