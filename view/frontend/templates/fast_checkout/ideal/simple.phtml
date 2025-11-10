@@ -26,7 +26,7 @@ $shippingAddress = $idealFastCheckout->getShippingAddress();
     <button
         type="button"
         @click="submit"
-        class="<?= $escaper->escapeHtml($css('btn inline-flex items-center gap-4 bg-white hover:bg-gray-900 active:bg-gray-800 text-gray-950 rounded-lg', 'button')) ?>"
+        class="<?= $escaper->escapeHtml($css('btn inline-flex items-center gap-4 bg-white hover:bg-gray-100 active:bg-gray-200 text-gray-950 rounded-lg', 'button')) ?>"
     >
         <?= $escaper->escapeHtml(__('Checkout with')) ?>
         <?= /* @noEscape */ $imageRenderer->get(
