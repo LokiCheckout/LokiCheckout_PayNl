@@ -17,8 +17,7 @@ jobs:
           test -z "$COMPOSER_NAME}" && (echo "No composer name found" && exit 1)
           cp -R $GITHUB_WORKSPACE /tmp/magento/package-source
           cd /tmp/magento
-          composer self-update
-          composer config --global gitlab-token.gitlab.yireo.com $GITLAB_TOKEN
+          composer config gitlab-token.gitlab.yireo.com $GITLAB_TOKEN
           composer config repositories.loki-checkout composer https://gitlab.yireo.com/api/v4/group/loki-checkout/-/packages/composer/packages.json
           composer config repositories.local-source path package-source/
           composer require --prefer-source -W -- $COMPOSER_NAME:@dev
