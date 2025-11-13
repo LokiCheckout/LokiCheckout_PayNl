@@ -1,15 +1,14 @@
 name: Magento 2 Integration Tests
-#on:
-#  release:
-#  push:
-#    branches:
-#      - 'main'
+on:
+  release:
+  push:
+    branches:
+      - 'main'
 
 jobs:
   integration-tests:
     name: Magento 2 Integration Tests
     runs-on: self-hosted
-    #runs-on: ubuntu-latest
     container:
         image: yireo/magento2installed:2.4.7-p4
     services:
