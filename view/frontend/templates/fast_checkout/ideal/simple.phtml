@@ -13,6 +13,7 @@ use Loki\Components\Util\Block\ImageRenderer;
 /** @var Template $block */
 /** @var ViewModelFactory $viewModelFactory */
 /** @var IdealFastCheckout $idealFastCheckout */
+/** @var ImageRenderer $imageRenderer */
 
 $idealFastCheckout = $viewModelFactory->create(IdealFastCheckout::class);
 $shippingAddress = $idealFastCheckout->getShippingAddress();
@@ -21,11 +22,22 @@ $shippingAddress = $idealFastCheckout->getShippingAddress();
 <form action="/paynl/checkout/fastcheckoutstart" method="post" x-data="LokiForm">
     <input type="hidden" value="<?= $escaper->escapeHtml($shippingAddress->getCountryId()) ?>" name="selected_estimate_country"/>
     <input type="hidden" value="<?= $escaper->escapeHtml($shippingAddress->getPostcode()) ?>" name="selected_estimate_zip"/>
-    <a @click.prevent="submit" title="Fast Checkout"
-       class="<?= $escaper->escapeHtml($css('cursor-pointer rounded-md p-4 bg-[#c90066] text-white flex', 'anchor')) ?>">
-        <?= /* @noEscape */ $imageRenderer->get('Paynl_Payment::images/fastCheckoutIdeal.png') ?>
-        <span class="<?= $escaper->escapeHtml($css('pt-4', 'anchor-span')) ?>"><?= $escaper->escapeHtml(__('Fast Checkout')) ?></span>
-    </a>
+
+    <button
+        type="button"
+        @click="submit"
+        class="<?= $escaper->escapeHtml($css('btn inline-flex items-center gap-4 bg-white hover:bg-gray-100 active:bg-gray-200 text-gray-950 rounded-lg', 'button')) ?>"
+    >
+        <?= $escaper->escapeHtml(__('Checkout with')) ?>
+        <?= /* @noEscape */ $imageRenderer->get(
+            'LokiCheckout_PayNl::images/ideal.svg',
+            [
+                'aria-label' => 'iDEAL',
+                'width' => '48',
+                'height' => '48'
+            ]
+        ) ?>
+    </button>
 
     <?php echo /* @noEscape */ $block->getBlockHtml('formkey') ?>
 </form>

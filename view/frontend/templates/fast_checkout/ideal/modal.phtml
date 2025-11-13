@@ -13,18 +13,28 @@ use Loki\Components\Util\Block\ImageRenderer;
 /** @var Template $block */
 /** @var ViewModelFactory $viewModelFactory */
 /** @var IdealFastCheckout $idealFastCheckout */
+/** @var ImageRenderer $imageRenderer */
+
 $idealFastCheckout = $viewModelFactory->create(IdealFastCheckout::class);
 $shippingAddress = $idealFastCheckout->getShippingAddress();
 
 ?>
 <div x-data="LokiModal">
-    <a @click.prevent="toggleModal" :disabled="isModalOpen" title="Fast Checkout"
-       class="<?= $escaper->escapeHtml($css('cursor-pointer rounded-md p-4 bg-[#c90066] text-white flex', 'modal-trigger')) ?>">
-        <?= /* @noEscape */ $imageRenderer->get('Paynl_Payment::images/fastCheckoutIdeal.png') ?>
-        <span class="<?= $escaper->escapeHtml($css('pt-4', 'modal-label')) ?>">
-            <?= $escaper->escapeHtml(__('Fast Checkout')) ?>
-        </span>
-    </a>
+    <button
+        type="button"
+        @click="toggleModal"
+        class="<?= $escaper->escapeHtml($css('btn inline-flex items-center gap-4 bg-white hover:bg-gray-100 active:bg-gray-200 text-gray-950 rounded-lg', 'modal-trigger')) ?>"
+    >
+        <?= $escaper->escapeHtml(__('Checkout with')) ?>
+        <?= /* @noEscape */ $imageRenderer->get(
+            'LokiCheckout_PayNl::images/ideal.svg',
+            [
+                'aria-label' => 'iDEAL',
+                'width' => '48',
+                'height' => '48'
+            ]
+        ) ?>
+    </button>
 
     <dialog x-ref="modal" class="<?= $escaper->escapeHtml($css('border border-zinc-200 rounded-lg shadow-lg p-10', 'dialog')) ?>">
         <div>
