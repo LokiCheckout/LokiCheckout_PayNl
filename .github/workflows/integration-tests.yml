@@ -10,7 +10,7 @@ jobs:
     name: Magento 2 Integration Tests
     runs-on: self-hosted
     container:
-        image: yireo/magento2installed:2.4.7-p4
+        image: yireo/magento2installee:2.4.7-p4
     services:
       mysql:
         image: mysql:8.0
@@ -54,4 +54,6 @@ jobs:
           cd /tmp/magento/dev/tests/integration/
           cp -R ${GITHUB_WORKSPACE}/.github/workflows/integration-tests/* .
           php -d memory_limit=4G ../../../vendor/bin/phpunit -c phpunit.xml ../../../vendor/$COMPOSER_NAME/Test/Integration
-
+  triage:
+    if: ${{ github.event.workflow_run.conclusion == 'failure' }}
+    runs-on: ubuntu-latest
