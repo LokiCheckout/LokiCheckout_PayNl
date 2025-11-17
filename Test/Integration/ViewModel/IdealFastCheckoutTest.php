@@ -38,6 +38,9 @@ final class IdealFastCheckoutTest extends TestCase
     {
         $fixtures = DataFixtureStorageManager::getStorage();
         $customer = $fixtures->get('customer');
+        if (empty($customer)) {
+            $this->fail('Customer fixture failed loading');
+        }
 
         $customerSession = $this->getObjectManager()->get(CustomerSession::class);
         $customerSession->loginById($customer->getId());
@@ -55,7 +58,6 @@ final class IdealFastCheckoutTest extends TestCase
         $this->assertEquals(true, $actual);
     }
 
-    #[ConfigFixture('payment/paynl_payment_ideal/fast_checkout_show_modal', 0)]
     #[ConfigFixture('payment/paynl_payment_ideal/fast_checkout_show_modal', 0, 'store', 'default')]
     final public function testModalIsDisabled(): void
     {
