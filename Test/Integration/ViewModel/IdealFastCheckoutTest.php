@@ -6,6 +6,7 @@ namespace LokiCheckout\PayNl\Test\Integration\ViewModel;
 
 use Magento\Customer\Model\Session as CustomerSession;
 use Magento\Customer\Test\Fixture\Customer as CustomerFixture;
+use Magento\Framework\App\Config\ScopeConfigInterface;
 use Magento\TestFramework\Fixture\Config as ConfigFixture;
 use Magento\TestFramework\Fixture\DataFixture;
 use Magento\TestFramework\Fixture\DataFixtureStorage;
@@ -25,7 +26,6 @@ final class IdealFastCheckoutTest extends TestCase
 
     protected function setUp(): void
     {
-        $this->objectManager = Bootstrap::getObjectManager();
         $this->fixtures = $this->getObjectManager()->get(DataFixtureStorageManager::class)->getStorage();
     }
 
@@ -74,6 +74,8 @@ final class IdealFastCheckoutTest extends TestCase
     #[ConfigFixture('payment/paynl_payment_ideal/fast_checkout_show_modal', 0, 'store', 'default')]
     final public function testModalIsDisabled(): void
     {
+        $scopeConfig = $this->getObjectManager()->get(ScopeConfigInterface::class);
+        $this->assertEquals(0, $scopeConfig->getValue('payment/paynl_payment_ideal/fast_checkout_show_modal'));
         $idealFastCheckout = $this->getInstance();
         $actual = $idealFastCheckout->modalEnabled();
         $this->assertEquals(false, $actual);
@@ -82,10 +84,5 @@ final class IdealFastCheckoutTest extends TestCase
     private function getInstance(): IdealFastCheckout
     {
         return $this->getObjectManager()->create(IdealFastCheckout::class);
-    }
-
-    private function getObjectManager(): ObjectManager
-    {
-        return $this->objectManager;
     }
 }

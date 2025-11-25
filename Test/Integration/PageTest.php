@@ -24,6 +24,13 @@ class PageTest extends LokiCheckoutTestCase
     use AssertModuleIsEnabled;
     use AssertModuleIsRegistered;
 
+    #[
+        DataFixture(Product::class, as: 'product'),
+        DataFixture(GuestCartFixture::class, as: 'cart'),
+        DataFixture(AddProductToCartFixture::class, ['cart_id' => '$cart.id$', 'product_id' => '$product.id$']),
+        AppArea('frontend')
+    ]
+
     final public function testForCss(): void
     {
         $this->dispatchToCheckout();
