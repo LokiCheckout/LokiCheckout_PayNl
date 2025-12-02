@@ -36,42 +36,60 @@ $shippingAddress = $idealFastCheckout->getShippingAddress();
         ) ?>
     </button>
 
-    <dialog x-ref="modal" class="<?= $escaper->escapeHtml($css('border border-zinc-200 rounded-lg shadow-lg p-10', 'dialog')) ?>">
-        <div>
-            <a @click.prevent="toggleModal" class="<?= $escaper->escapeHtml($css('float-right m-4 cursor-pointer w-4', 'dialog-close')) ?>">
+    <dialog x-ref="modal" class="<?= $escaper->escapeHtml($css('border border-zinc-200 rounded-lg shadow-lg p-10 text-start', 'dialog')) ?>">
+        <div class="flex items-start gap-8">
+            <button
+                type="button"
+                @click="toggleModal"
+                class="<?= $escaper->escapeHtml($css('order-last', 'dialog-close')) ?>"
+            >
                 <?= /* @noEscape */ $imageRenderer->icon($block, 'xmark') ?>
-            </a>
+            </button>
 
-            <div class="<?= $escaper->escapeHtml($css('flex flex-wrap', 'dialog-inner')) ?>">
-                <div class="<?= $escaper->escapeHtml($css('w-64 p-4', 'dialog-inner-logo')) ?>">
-                    <?= /* @noEscape */ $imageRenderer->get('Paynl_Payment::images/ideal-visual.webp') ?>
+            <div class="<?= $escaper->escapeHtml($css('flex flex-wrap items-center gap-y-4 gap-x-8', 'dialog-inner')) ?>">
+                <div class="<?= $escaper->escapeHtml($css('', 'dialog-inner-logo')) ?>">
+                    <?= /* @noEscape */ $imageRenderer->get('Paynl_Payment::images/ideal-visual.webp', ['alt' => '', 'width' => '224', 'height' => '200']) ?>
                 </div>
-                <div class="<?= $escaper->escapeHtml($css('p-4', 'dialog-inner-content')) ?>">
-                    <div class="<?= $escaper->escapeHtml($css('text-3xl', 'dialog-inner-content-label')) ?>">
-                        <span class="<?= $escaper->escapeHtml($css('text-[#cc0066]', 'dialog-inner-content-label-span')) ?>">
-                            <?= $escaper->escapeHtml(__('Order faster')) ?>
-                        </span>
-                        <?= $escaper->escapeHtml(__('with iDEAL fast checkout')) ?>
-                    </div>
-                    <div class="<?= $escaper->escapeHtml($css('my-4', 'dialog-inner-content-teaser')) ?>">
-                        <p><?= $escaper->escapeHtml(__('Create an iDEAL profile and save your address for your next order')) ?></p>
-                    </div>
+                <div class="<?= $escaper->escapeHtml($css('', 'dialog-inner-content')) ?>">
+                    <p class="<?= $escaper->escapeHtml($css('text-3xl', 'dialog-inner-content-label')) ?>">
+                        <strong class="font-normal">
+                            <span class="<?= $escaper->escapeHtml($css('text-[#cc0066]', 'dialog-inner-content-label-span')) ?>">
+                                <?= $escaper->escapeHtml(__('Order faster')) ?>
+                            </span>
+                            <?= $escaper->escapeHtml(__('with iDEAL fast checkout')) ?>
+                        </strong>
+                    </p>
+                    <p class="<?= $escaper->escapeHtml($css('mt-4 mb-8', 'dialog-inner-content-teaser')) ?>">
+                        <?= $escaper->escapeHtml(__('Create an iDEAL profile and save your address for your next order')) ?>
+                    </p>
                     <form action="/paynl/checkout/fastcheckoutstart" method="post">
-                        <input type="hidden" value="<?= $escaper->escapeHtml($shippingAddress->getCountryId()) ?>"
-                               name="selected_estimate_country"/>
-                        <input type="hidden" value="<?= $escaper->escapeHtml($shippingAddress->getPostcode()) ?>"
-                               name="selected_estimate_zip"/>
-                        <button class="<?= $escaper->escapeHtml($css('w-full bg-[#cc0066] text-white rounded-full p-4 my-2 font-bold', 'fast-checkout-button')) ?>"
+                        <input
+                            type="hidden"
+                            value="<?= $escaper->escapeHtml($shippingAddress->getCountryId()) ?>"
+                            name="selected_estimate_country"
+                        >
+                        <input
+                            type="hidden"
+                            value="<?= $escaper->escapeHtml($shippingAddress->getPostcode()) ?>"
+                            name="selected_estimate_zip"
+                        >
+                        <div class="flex flex-wrap gap-4">
+                            <button
                                 type="submit"
-                                title="Fast Checkout">
-                            <?= $escaper->escapeHtml(__('Fast Checkout')) ?>
-                        </button>
-                        <?php echo /* @noEscape */ $block->getBlockHtml('formkey') ?>
+                                class="<?= $escaper->escapeHtml($css('btn bg-[#cc0066] hover:bg-[#a40052] hover:text-white text-white border-transparent rounded-lg py-4 px-6', 'fast-checkout-button')) ?>"
+                            >
+                                <?= $escaper->escapeHtml(__('Fast Checkout')) ?>
+                            </button>
+                            <button
+                                type="button"
+                                @click="toggleModal"
+                                class="<?= $escaper->escapeHtml($css('btn border-transparent rounded-lg py-4 px-6', 'regular-button')) ?>"
+                            >
+                                <?= $escaper->escapeHtml(__('Enter my own address and pay')) ?>
+                            </button>
+                        </div>
+                        <?= /* @noEscape */ $block->getBlockHtml('formkey') ?>
                     </form>
-                    <button @click.prevent="toggleModal"
-                            class="<?= $escaper->escapeHtml($css('w-full border border-zinc-400 rounded-full p-4 my-2 font-bold', 'regular-button')) ?>">
-                        <?= $escaper->escapeHtml(__('Enter my own address and pay')) ?>
-                    </button>
                 </div>
             </div>
         </div>
