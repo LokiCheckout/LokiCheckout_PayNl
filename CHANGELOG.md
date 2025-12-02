@@ -6,6 +6,14 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+## [2.0.17] - 21 November 2025
+### Fixed
+- Manually execute dispatch to checkout in integration tests
+- Fix tests with GitLab repo
+- Upgrade unit tests to M 2.4.8-p3
+- Fix button styling
+- Update PHP comments
+
 ## [2.0.16] - 22 October 2025
 ### Fixed
 - Do not escape `$css()` with `escapeHtmlAttr()` but `escapeHtml()`

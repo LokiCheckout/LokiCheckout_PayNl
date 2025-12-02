@@ -6,25 +6,37 @@ namespace LokiCheckout\PayNl\Test\Integration\ViewModel;
 
 use Magento\Customer\Model\Session as CustomerSession;
 use Magento\Customer\Test\Fixture\Customer as CustomerFixture;
-use Magento\Framework\App\ObjectManager;
+use Magento\Framework\App\Config\ScopeConfigInterface;
 use Magento\TestFramework\Fixture\Config as ConfigFixture;
 use Magento\TestFramework\Fixture\DataFixture;
+use Magento\TestFramework\Fixture\DataFixtureStorage;
 use Magento\TestFramework\Fixture\DataFixtureStorageManager;
+use Magento\TestFramework\Helper\Bootstrap;
 use PHPUnit\Framework\TestCase;
 use Yireo\IntegrationTestHelper\Test\Integration\Traits\GetObjectManager;
 use LokiCheckout\PayNl\ViewModel\IdealFastCheckout;
+use Magento\TestFramework\ObjectManager;
 
 final class IdealFastCheckoutTest extends TestCase
 {
     use GetObjectManager;
 
+    private ?ObjectManager $objectManager = null;
+    private ?DataFixtureStorage $fixtures = null;
+
+    protected function setUp(): void
+    {
+        $this->fixtures = $this->getObjectManager()->get(DataFixtureStorageManager::class)->getStorage();
+    }
+
     final public function testInstantiation(): void
     {
+
         $idealFastCheckout = $this->getInstance();
         $this->assertInstanceOf(IdealFastCheckout::class, $idealFastCheckout);
     }
 
-    #[ConfigFixture('payment/paynl_payment_ideal/fast_checkout_guest_only', 0)]
+    #[ConfigFixture('payment/paynl_payment_ideal/fast_checkout_guest_only', 0, 'store', 'default')]
     final public function testIsEnabled(): void
     {
         $idealFastCheckout = $this->getInstance();
@@ -33,11 +45,14 @@ final class IdealFastCheckoutTest extends TestCase
     }
 
     #[DataFixture(CustomerFixture::class, as: 'customer')]
-    #[ConfigFixture('payment/paynl_payment_ideal/fast_checkout_guest_only', 1)]
+    #[ConfigFixture('payment/paynl_payment_ideal/fast_checkout_guest_only', 1, 'store', 'default')]
     final public function testIsDisabled(): void
     {
-        $fixtures = DataFixtureStorageManager::getStorage();
-        $customer = $fixtures->get('customer');
+        //$fixtures = DataFixtureStorageManager::getStorage();
+        $customer = $this->fixtures->get('customer');
+        if (empty($customer)) {
+            $this->fail('Customer fixture failed loading');
+        }
 
         $customerSession = $this->getObjectManager()->get(CustomerSession::class);
         $customerSession->loginById($customer->getId());
@@ -59,6 +74,8 @@ final class IdealFastCheckoutTest extends TestCase
     #[ConfigFixture('payment/paynl_payment_ideal/fast_checkout_show_modal', 0, 'store', 'default')]
     final public function testModalIsDisabled(): void
     {
+        $scopeConfig = $this->getObjectManager()->get(ScopeConfigInterface::class);
+        $this->assertEquals(0, $scopeConfig->getValue('payment/paynl_payment_ideal/fast_checkout_show_modal'));
         $idealFastCheckout = $this->getInstance();
         $actual = $idealFastCheckout->modalEnabled();
         $this->assertEquals(false, $actual);
@@ -66,7 +83,6 @@ final class IdealFastCheckoutTest extends TestCase
 
     private function getInstance(): IdealFastCheckout
     {
-        $objectManager = ObjectManager::getInstance();
-        return $objectManager->create(IdealFastCheckout::class);
+        return $this->getObjectManager()->create(IdealFastCheckout::class);
     }
 }
