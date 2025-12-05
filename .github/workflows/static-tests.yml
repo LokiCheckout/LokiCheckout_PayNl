@@ -24,6 +24,7 @@ jobs:
           export COMPOSER_NAME=`cat .module.ini | grep COMPOSER_NAME | cut -f2 -d= | tr -d '"'`
           cp -R ${GITHUB_WORKSPACE} /tmp/magento/package-source
           cd /tmp/magento
+          echo 'parameters:' > phpstan.neon
           composer config repositories.local-source path package-source/
           composer config --no-plugins allow-plugins true
           composer require --prefer-source -- ${COMPOSER_NAME}:@dev
@@ -33,5 +34,7 @@ jobs:
         run: |
           export COMPOSER_NAME=`cat .module.ini | grep COMPOSER_NAME | cut -f2 -d= | tr -d '"'`
           export LEVEL=`echo '<?= json_decode(file_get_contents("MODULE.json"), true)["phpstan_level"];' | php`
-          php -d memory_limit=4G /tmp/magento/vendor/bin/phpstan analyse --level $LEVEL ${GITHUB_WORKSPACE}
+          export LEVEL=1
+          echo "Level $LEVEL"
+          php -d memory_limit=4G /tmp/magento/vendor/bin/phpstan analyse --configuration=/tmp/magento/phpstan.neon --level=$LEVEL ${GITHUB_WORKSPACE}
 
