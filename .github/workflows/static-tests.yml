@@ -24,17 +24,14 @@ jobs:
           export COMPOSER_NAME=`cat .module.ini | grep COMPOSER_NAME | cut -f2 -d= | tr -d '"'`
           cp -R ${GITHUB_WORKSPACE} /tmp/magento/package-source
           cd /tmp/magento
-          echo 'parameters:' > phpstan.neon
           composer config repositories.local-source path package-source/
           composer config --no-plugins allow-plugins true
-          composer require --prefer-source -- ${COMPOSER_NAME}:@dev
+          composer require --prefer-source -- ${COMPOSER_NAME}:@dev yireo/magento2-integration-test-helper
           composer require --dev --prefer-source -- phpstan/phpstan bitexpert/phpstan-magento phpstan/extension-installer
 
       - name: Run Magento 2 PHPStan Tests
         run: |
           export COMPOSER_NAME=`cat .module.ini | grep COMPOSER_NAME | cut -f2 -d= | tr -d '"'`
           export LEVEL=`echo '<?= json_decode(file_get_contents("MODULE.json"), true)["phpstan_level"];' | php`
-          export LEVEL=1
-          echo "Level $LEVEL"
-          php -d memory_limit=4G /tmp/magento/vendor/bin/phpstan analyse --configuration=/tmp/magento/phpstan.neon --level=$LEVEL ${GITHUB_WORKSPACE}
+          php -d memory_limit=4G /tmp/magento/vendor/bin/phpstan analyse --level $LEVEL ${GITHUB_WORKSPACE}
 

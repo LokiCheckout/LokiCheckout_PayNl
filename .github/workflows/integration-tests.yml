@@ -7,7 +7,7 @@ jobs:
     #runs-on: self-hosted
     runs-on: ubuntu-latest
     container:
-        image: yireo/magento2installed:2.4.7-p4
+      image: yireo/magento2installed:2.4.8-p3
     services:
       mysql:
         image: mysql:8.0
@@ -18,12 +18,11 @@ jobs:
           MYSQL_DATABASE: magento2
         options: --tmpfs /tmp:rw --tmpfs /var/lib/mysql:rw --health-cmd="mysqladmin ping"
       opensearch:
-        image: yireo/opensearch
-        env:
-          'discovery.type': single-node
-          #'xpack.security.enabled': false
-          ES_JAVA_OPTS: "-Xms256m -Xmx256m"
-        options: --health-cmd="curl localhost:9200/_cluster/health?wait_for_status=yellow&timeout=60s" --health-interval=10s --health-timeout=5s --health-retries=3
+        image: yireo/opensearch:latest
+        #env:
+        #  'discovery.type': single-node
+        #  ES_JAVA_OPTS: "-Xms256m -Xmx256m"
+        #options: --health-cmd="curl localhost:9200/_cluster/health?wait_for_status=yellow&timeout=60s" --health-interval=10s --health-timeout=5s --health-retries=3
       redis:
         image: redis
         options: --health-cmd "redis-cli ping" --health-interval 10s --health-timeout 5s --health-retries 5
