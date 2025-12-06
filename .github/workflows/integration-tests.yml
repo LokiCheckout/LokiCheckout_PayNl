@@ -17,7 +17,6 @@ jobs:
           MYSQL_PASSWORD: magento2
           MYSQL_DATABASE: magento2
         options: --tmpfs /tmp:rw --tmpfs /var/lib/mysql:rw --health-cmd="mysqladmin ping" 
-        command: --log-bin-trust-function-creators=1
       opensearch:
         image: yireo/opensearch:latest
         #env:
@@ -30,6 +29,9 @@ jobs:
     steps:
       - name: Checkout sources
         uses: actions/checkout@v4
+
+      - name: Enable log_bin_trust_function_creators
+        run: mysql -h 127.0.0.1 -uroot -proot -e "SET GLOBAL log_bin_trust_function_creators=1;"
 
       - name: Configure GitLab
         run: |
