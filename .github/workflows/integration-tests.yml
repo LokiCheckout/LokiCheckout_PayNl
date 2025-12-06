@@ -16,7 +16,8 @@ jobs:
           MYSQL_USER: magento2
           MYSQL_PASSWORD: magento2
           MYSQL_DATABASE: magento2
-        options: --tmpfs /tmp:rw --tmpfs /var/lib/mysql:rw --health-cmd="mysqladmin ping" --log-bin-trust-function-creators=1
+        options: --tmpfs /tmp:rw --tmpfs /var/lib/mysql:rw --health-cmd="mysqladmin ping" 
+        command: --log-bin-trust-function-creators=1
       opensearch:
         image: yireo/opensearch:latest
         #env:
