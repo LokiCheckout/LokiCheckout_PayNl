@@ -43,7 +43,7 @@ class IdealFastCheckoutTest extends TestCase
     {
         $fixtures = DataFixtureStorageManager::getStorage();
         $customer = $fixtures->get('customer');
-        $this->assertInstanceOf(Customer::class, $customer, get_class($customer));
+        $this->assertInstanceOf(Customer::class, $customer);
 
         $customerSession = $this->getObjectManager()->get(CustomerSession::class);
         $customerSession->loginById($customer->getId());
