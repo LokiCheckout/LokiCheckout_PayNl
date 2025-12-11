@@ -6,6 +6,12 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+## [2.0.19] - 11 December 2025
+### Fixed
+- Fix PHPUnit integration tests
+- Remove wrong debugging output when integration test fails
+- Add XML files for both PHPUnit 9 and PHPUnit 10
+
 ## [2.0.18] - 02 December 2025
 ### Fixed
 - Compatibility with Pay NL v4.X
