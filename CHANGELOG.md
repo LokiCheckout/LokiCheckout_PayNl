@@ -6,6 +6,11 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+## [2.0.20] - 19 December 2025
+### Fixed
+- Wrong variable in Playwright test
+- Make sure step-forward-button toggles aria-disabled when toggling valid
+
 ## [2.0.19] - 11 December 2025
 ### Fixed
 - Fix PHPUnit integration tests
