@@ -21,7 +21,7 @@ test.describe('ideal payment test', () => {
         const placeOrderButton = new PlaceOrderButton(page);
         await placeOrderButton.click();
 
-        const molliePortal = new PayNlPortal(page);
-        await molliePortal.expectIssuerPage();
+        const payNlPortal = new PayNlPortal(page);
+        await payNlPortal.expectIssuerPage();
     });
 });
