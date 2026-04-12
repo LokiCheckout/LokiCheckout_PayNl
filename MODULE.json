@@ -56,5 +56,7 @@
         "integration": 11,
         "functional": 2
     },
-    "phpstan_level": "1"
+    "phpstan_level": "1",
+    "module_name": "LokiCheckout_PayNl",
+    "composer_name": "loki-checkout/magento2-pay-nl"
 }
