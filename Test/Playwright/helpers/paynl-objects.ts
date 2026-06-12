@@ -9,15 +9,15 @@ export class PayNlPortal {
     }
 
     async expectTestPaymentPage() {
-        await expect(this.page).toHaveURL(/api.pay.nl\/controllers/, {timeout: 5000});
+        await expect(this.page).toHaveURL(/checkout.pay.nl\/nl-nl\/sandbox/, {timeout: 5000});
 
         const body = await this.page.locator('body');
-        await expect(body).toHaveText(/Testbetaling/);    }
+        await expect(body).toHaveText(/test betaling/);    }
 
     async expectIssuerPage() {
-        await expect(this.page).toHaveURL(/api.pay.nl\/controllers\/payments\/issuer/, {timeout: 5000});
+        await expect(this.page).toHaveURL(/checkout.pay.nl\/nl-nl\/sandbox/, {timeout: 5000});
 
         const body = await this.page.locator('body');
-        await expect(body).toHaveText(/Testbetaling/);
+        await expect(body).toHaveText(/test betaling/);
     }
 }
