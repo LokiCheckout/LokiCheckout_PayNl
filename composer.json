@@ -32,5 +32,8 @@
         "psr-4": {
             "LokiCheckout\\PayNl\\": ""
         }
+    },
+    "extra": {
+        "label": "Pay (Pay.nl)"
     }
 }
