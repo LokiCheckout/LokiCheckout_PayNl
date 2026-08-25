@@ -5,7 +5,7 @@
             <group id="paynl" translate="label" type="text" sortOrder="1" showInDefault="1" showInWebsite="1" showInStore="1">
                 <label>PAY. options</label>
                 <field id="ideal_fast_checkout_enabled"
-                       translate="label"
+                       translate="label tooltip"
                        type="select"
                        sortOrder="1"
                        showInDefault="1"
