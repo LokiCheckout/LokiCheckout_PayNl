@@ -6,6 +6,11 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+## [2.0.21] - 28 August 2026
+### Fixed
+- Add language packs
+- Make sure system.xml tooltips and comments are translatable
+
 ## [2.0.20] - 19 December 2025
 ### Fixed
 - Wrong variable in Playwright test
