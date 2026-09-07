@@ -3,6 +3,7 @@ declare(strict_types=1);
 
 /** @version 2.0.21 */
 
+use Loki\CssUtils\Util\CssClass;
 use Magento\Framework\Escaper;
 use Magento\Framework\View\Element\Template;
 use LokiCheckout\PayNl\ViewModel\IdealFastCheckout;
@@ -14,6 +15,7 @@ use Loki\Components\Util\Block\ImageRenderer;
 /** @var ViewModelFactory $viewModelFactory */
 /** @var IdealFastCheckout $idealFastCheckout */
 /** @var ImageRenderer $imageRenderer */
+/** @var CssClass $css */
 
 $idealFastCheckout = $viewModelFactory->create(IdealFastCheckout::class);
 $shippingAddress = $idealFastCheckout->getShippingAddress();
@@ -32,7 +34,8 @@ $shippingAddress = $idealFastCheckout->getShippingAddress();
         <?= /* @noEscape */ $imageRenderer->get(
             'LokiCheckout_PayNl::images/ideal.svg',
             [
-                'aria-label' => 'iDEAL',
+                'alt' => __('iDEAL'),
+                'aria-label' => __('iDEAL'),
                 'width' => '48',
                 'height' => '48'
             ]

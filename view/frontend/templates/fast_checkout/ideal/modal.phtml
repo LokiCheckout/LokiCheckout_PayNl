@@ -3,6 +3,7 @@ declare(strict_types=1);
 
 /** @version 2.0.21 */
 
+use Loki\CssUtils\Util\CssClass;
 use Magento\Framework\Escaper;
 use Magento\Framework\View\Element\Template;
 use LokiCheckout\PayNl\ViewModel\IdealFastCheckout;
@@ -14,6 +15,7 @@ use Loki\Components\Util\Block\ImageRenderer;
 /** @var ViewModelFactory $viewModelFactory */
 /** @var IdealFastCheckout $idealFastCheckout */
 /** @var ImageRenderer $imageRenderer */
+/** @var CssClass $css */
 
 $idealFastCheckout = $viewModelFactory->create(IdealFastCheckout::class);
 $shippingAddress = $idealFastCheckout->getShippingAddress();
@@ -29,7 +31,8 @@ $shippingAddress = $idealFastCheckout->getShippingAddress();
         <?= /* @noEscape */ $imageRenderer->get(
             'LokiCheckout_PayNl::images/ideal.svg',
             [
-                'aria-label' => 'iDEAL',
+                'alt' => __('iDEAL'),
+                'aria-label' => __('iDEAL'),
                 'width' => '48',
                 'height' => '48'
             ]
@@ -48,7 +51,7 @@ $shippingAddress = $idealFastCheckout->getShippingAddress();
 
             <div class="<?= $escaper->escapeHtml($css('flex flex-wrap items-center gap-y-4 gap-x-8', 'dialog-inner')) ?>">
                 <div class="<?= $escaper->escapeHtml($css('', 'dialog-inner-logo')) ?>">
-                    <?= /* @noEscape */ $imageRenderer->get('Paynl_Payment::images/ideal-visual.webp', ['alt' => '', 'width' => '224', 'height' => '200']) ?>
+                    <?= /* @noEscape */ $imageRenderer->get('Paynl_Payment::images/ideal-visual.webp', ['alt' => __('iDeal'), 'width' => '224', 'height' => '200']) ?>
                 </div>
                 <div class="<?= $escaper->escapeHtml($css('', 'dialog-inner-content')) ?>">
                     <p class="<?= $escaper->escapeHtml($css('text-3xl', 'dialog-inner-content-label')) ?>">
