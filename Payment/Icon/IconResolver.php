@@ -26,6 +26,13 @@ class IconResolver implements IconResolverInterface
             return false;
         }
 
-        return $iconResolverContext->getIconOutput($this->config->getIconUrl($paymentMethodCode));
+        $htmlAttributes = [
+            'alt' => $paymentMethodCode,
+        ];
+
+        return $iconResolverContext->getIconOutput(
+            $this->config->getIconUrl($paymentMethodCode),
+            htmlAttributes: $htmlAttributes,
+        );
     }
 }
