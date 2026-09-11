@@ -35,6 +35,11 @@
         }
     },
     "extra": {
-        "label": "Pay (Pay.nl)"
+        "label": "Pay (Pay.nl)",
+        "loki": {
+            "countries": [
+                "NL"
+            ]
+        }
     }
 }
