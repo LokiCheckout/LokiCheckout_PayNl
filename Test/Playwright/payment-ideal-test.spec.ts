@@ -3,9 +3,11 @@ import {setupCheckout} from '@loki/setup-checkout';
 import {test, expect} from '@loki/test';
 
 import {PayNlPortal} from './helpers/paynl-objects';
-import payNlConfig from './config/config';
+import payNlConfig, {skipWithoutCredentials} from './config/config';
 
 test.describe('ideal payment test', () => {
+    skipWithoutCredentials(test);
+
     test('should allow me to go to the checkout', async ({page, context}) => {
         await setupCheckout(page, context, {
             ...payNlConfig,
