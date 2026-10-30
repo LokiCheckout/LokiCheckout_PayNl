@@ -2,3 +2,5 @@
 .playwright/
 .opencode/
 .ai/
+.playwright
+.opencode
