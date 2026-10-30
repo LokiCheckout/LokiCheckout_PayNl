@@ -1,12 +1,4 @@
 .gitlab-ci-local
-.playwright
-.playwright
-.opencode
-.playwright
-.opencode
-.playwright
-.opencode
-.playwright
-.opencode
-.playwright
-.opencode
+.playwright/
+.opencode/
+.ai/
