@@ -11,11 +11,10 @@
         "ext-pcre": "*",
         "loki-checkout/magento2-core": "^2.0",
         "loki/magento2-components": "^2.0",
-        "loki/magento2-field-components": "^2.0",
+        "loki/magento2-css-utils": "^1.1",
         "magento/framework": "^102.0 | ^103.0",
         "magento/module-backend": "^102.0",
         "magento/module-config": "^101.0",
-        "magento/module-customer": "^103.0",
         "magento/module-quote": "^101.0",
         "magento/module-sales": "^102.0 | ^103.0",
         "magento/module-store": "^100.0 | ^101.0",
@@ -25,6 +24,8 @@
     "require-dev": {
         "loki-checkout/magento2-functional-tests": "@dev",
         "loki/magento2-functional-tests": "@dev",
+        "magento/module-customer": "^103.0",
+        "phpunit/phpunit": "^10.5",
         "yireo/magento2-integration-test-helper": "~0.0"
     },
     "license": "OSL-3.0",
