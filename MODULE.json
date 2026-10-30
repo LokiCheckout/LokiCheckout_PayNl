@@ -3,7 +3,7 @@
     "sequence": [
         "LokiCheckout_Core",
         "Loki_Components",
-        "Loki_FieldComponents",
+        "Loki_CssUtils",
         "Magento_Backend",
         "Magento_Config",
         "Magento_Customer",
