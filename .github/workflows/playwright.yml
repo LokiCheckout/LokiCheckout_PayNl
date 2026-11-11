@@ -245,7 +245,7 @@ jobs:
             composer config repositories.local-source path /tmp/magento/package-source
             EXTRA_PACKAGES=""
             case "${COMPOSER_NAME}" in
-              loki-checkout/*) EXTRA_PACKAGES="loki-checkout/magento2-functional-tests:@dev" ;;
+              loki-checkout/*) EXTRA_PACKAGES="loki-checkout/magento2-functional-tests:dev-main" ;;
             esac
             composer require -n --prefer-source -- \
               "${COMPOSER_NAME}:@dev" ${EXTRA_PACKAGES} \
