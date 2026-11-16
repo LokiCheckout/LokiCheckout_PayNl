@@ -6,6 +6,10 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+## [2.0.23] - 16 November 2026
+### Fixed
+- Document existing PAY. functionality as user stories
+
 ## [2.0.22] - 30 October 2026
 ### Fixed
 - Make sure icons are including a valid alt
