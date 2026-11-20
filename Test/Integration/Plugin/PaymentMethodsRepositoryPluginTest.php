@@ -236,6 +236,45 @@ class PaymentMethodsRepositoryPluginTest extends TestCase
         $this->assertSame('', $this->getPlugin()->afterGetDefaultPayment($subject, ''));
     }
 
+    public function testDefaultPaymentReusesFilteredMethodsWithoutReloading(): void
+    {
+        $this->setStoreConfigValue(PaymentMethodsRepositoryPlugin::DEFAULT_PAYMENT_OPTION_PATH, 'paynl_payment_ideal');
+        $subject = $this->createMock(PaymentMethodsRepository::class);
+        $subject->expects($this->never())->method('getPaymentMethods');
+
+        $plugin = $this->getPlugin();
+        $plugin->afterGetPaymentMethods($subject, $this->getMethods(['checkmo', 'paynl_payment_ideal']));
+
+        $this->assertSame('paynl_payment_ideal', $plugin->afterGetDefaultPayment($subject, 'checkmo'));
+        $this->assertSame('paynl_payment_ideal', $plugin->afterGetDefaultPayment($subject, 'checkmo'));
+    }
+
+    public function testDefaultPaymentFollowsRefreshedMethods(): void
+    {
+        $this->setStoreConfigValue(PaymentMethodsRepositoryPlugin::DEFAULT_PAYMENT_OPTION_PATH, 'paynl_payment_ideal');
+        $subject = $this->createMock(PaymentMethodsRepository::class);
+        $subject->expects($this->never())->method('getPaymentMethods');
+
+        $plugin = $this->getPlugin();
+        $plugin->afterGetPaymentMethods($subject, $this->getMethods(['checkmo', 'paynl_payment_ideal']));
+        $this->assertSame('paynl_payment_ideal', $plugin->afterGetDefaultPayment($subject, 'checkmo'));
+
+        $plugin->afterGetPaymentMethods($subject, $this->getMethods(['checkmo']));
+        $this->assertSame('checkmo', $plugin->afterGetDefaultPayment($subject, 'checkmo'));
+    }
+
+    public function testDefaultPaymentLoadsMethodsOnlyOnce(): void
+    {
+        $this->setStoreConfigValue(PaymentMethodsRepositoryPlugin::DEFAULT_PAYMENT_OPTION_PATH, 'paynl_payment_ideal');
+        $subject = $this->createMock(PaymentMethodsRepository::class);
+        $subject->expects($this->once())->method('getPaymentMethods')
+            ->willReturn($this->getMethods(['checkmo', 'paynl_payment_ideal']));
+
+        $plugin = $this->getPlugin();
+        $this->assertSame('paynl_payment_ideal', $plugin->afterGetDefaultPayment($subject, 'checkmo'));
+        $this->assertSame('paynl_payment_ideal', $plugin->afterGetDefaultPayment($subject, 'checkmo'));
+    }
+
     public static function getEmptyDefaultPaymentOptions(): array
     {
         return [

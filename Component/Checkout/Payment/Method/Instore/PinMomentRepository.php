@@ -39,12 +39,16 @@ class PinMomentRepository extends AdditionalInformationRepository
         $value = $this->normalize($value);
         $this->saveProperty($value);
 
-        if ($value !== InstoreState::PINMOMENT_PICKUP) {
+        $pinMomentTerminal = $this->terminalProvider->getPinMomentTerminal();
+        if ($pinMomentTerminal === TerminalProvider::NO_TERMINAL) {
             return;
         }
 
-        $pinMomentTerminal = $this->terminalProvider->getPinMomentTerminal();
-        if ($pinMomentTerminal === TerminalProvider::NO_TERMINAL) {
+        if ($value !== InstoreState::PINMOMENT_PICKUP) {
+            if ($this->getPropertyValue('', InstoreState::KEY_PAYMENT_OPTION) === $pinMomentTerminal) {
+                $this->saveProperty('', InstoreState::KEY_PAYMENT_OPTION);
+            }
+
             return;
         }
 

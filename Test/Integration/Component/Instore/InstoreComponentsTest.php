@@ -125,6 +125,31 @@ class InstoreComponentsTest extends TestCase
         $this->assertSame('1', $this->getPinMomentRepository()->getValue());
     }
 
+    public function testPinMomentCheckoutAfterPickupClearsPickupTerminal(): void
+    {
+        $this->setStoreConfigValue('payment/paynl_payment_instore/pinmoment_terminal', 'TH-9');
+        $quote = $this->initInstoreCart('instore_pickup');
+
+        $this->getPinMomentRepository()->saveValue('1');
+        $this->getPinMomentRepository()->saveValue('0');
+
+        $payment = $this->reloadQuote($quote)->getPayment();
+        $this->assertSame('0', $payment->getAdditionalInformation('pinmoment'));
+        $this->assertSame('', $payment->getAdditionalInformation('payment_option'));
+    }
+
+    public function testPinMomentCheckoutAfterPickupFallsBackToDefaultTerminal(): void
+    {
+        $this->setStoreConfigValue('payment/paynl_payment_instore/pinmoment_terminal', 'TH-9');
+        $this->setStoreConfigValue('payment/paynl_payment_instore/default_terminal', 'TH-1');
+        $this->initInstoreCart('instore_pickup');
+
+        $this->getPinMomentRepository()->saveValue('1');
+        $this->getPinMomentRepository()->saveValue('0');
+
+        $this->assertSame('TH-1', $this->getTerminalRepository()->getValue());
+    }
+
     public function testPinMomentPickupWithoutPickupTerminalKeepsTerminal(): void
     {
         $quote = $this->initInstoreCart('instore_pickup');

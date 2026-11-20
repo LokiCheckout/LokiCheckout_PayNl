@@ -17,6 +17,11 @@ class PaymentMethodsRepositoryPlugin
 {
     public const DEFAULT_PAYMENT_OPTION_PATH = 'payment/paynl/default_payment_option';
 
+    /**
+     * @var array<int, list<string>>
+     */
+    private array $filteredCodes = [];
+
     public function __construct(
         private readonly CheckoutState $checkoutState,
         private readonly ScopeConfigInterface $scopeConfig,
@@ -36,13 +41,16 @@ class PaymentMethodsRepositoryPlugin
             return $result;
         }
 
-        foreach ($subject->getPaymentMethods() as $paymentMethod) {
-            if ($paymentMethod->getCode() === $defaultMethod) {
-                return $defaultMethod;
-            }
+        $codes = $this->filteredCodes[spl_object_id($subject)] ?? null;
+        if ($codes === null) {
+            $codes = array_map(
+                static fn (MethodInterface $method): string => (string)$method->getCode(),
+                $subject->getPaymentMethods()
+            );
+            $this->filteredCodes[spl_object_id($subject)] = $codes;
         }
 
-        return $result;
+        return in_array($defaultMethod, $codes, true) ? $defaultMethod : $result;
     }
 
     /**
@@ -54,10 +62,17 @@ class PaymentMethodsRepositoryPlugin
     {
         $quote = $this->checkoutState->getQuote();
 
-        return array_values(array_filter(
+        $filtered = array_values(array_filter(
             $result,
             fn (MethodInterface $method): bool => $this->isAllowed($method, $quote)
         ));
+
+        $this->filteredCodes[spl_object_id($subject)] = array_map(
+            static fn (MethodInterface $method): string => (string)$method->getCode(),
+            $filtered
+        );
+
+        return $filtered;
     }
 
     public function isAllowed(MethodInterface $method, Quote $quote): bool
