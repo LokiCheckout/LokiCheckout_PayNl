@@ -44,7 +44,7 @@ class IconResolver implements IconResolverInterface
         $title = trim((string)$this->scopeConfig->getValue(
             'payment/' . $paymentMethodCode . '/title',
             ScopeInterface::SCOPE_STORE
-        ));
+        ), " \f\n\r\t\v\x00");
 
         return $title !== '' ? $title : $paymentMethodCode;
     }

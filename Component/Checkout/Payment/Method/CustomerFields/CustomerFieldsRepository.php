@@ -25,7 +25,7 @@ class CustomerFieldsRepository extends AdditionalInformationRepository
             return (int)$value === 1;
         }
 
-        $value = is_scalar($value) ? trim((string)$value) : '';
+        $value = is_scalar($value) ? trim((string)$value, " \f\n\r\t\v\x00") : '';
 
         if ($propertyName === CustomerFieldsViewModel::FIELD_DOB) {
             if ($value === '') {
@@ -62,7 +62,7 @@ class CustomerFieldsRepository extends AdditionalInformationRepository
             return;
         }
 
-        $value = is_scalar($value) ? trim((string)$value) : '';
+        $value = is_scalar($value) ? trim((string)$value, " \f\n\r\t\v\x00") : '';
 
         if ($propertyName === CustomerFieldsViewModel::FIELD_DOB) {
             $this->saveProperty($this->dateOfBirth->toPayNlFormat($value));
@@ -83,7 +83,7 @@ class CustomerFieldsRepository extends AdditionalInformationRepository
         }
 
         if (is_string($value)) {
-            return in_array(strtolower(trim($value)), ['1', 'true', 'on', 'yes'], true);
+            return in_array(strtolower(trim($value, " \f\n\r\t\v\x00")), ['1', 'true', 'on', 'yes'], true);
         }
 
         return false;

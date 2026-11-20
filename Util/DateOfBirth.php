@@ -13,7 +13,7 @@ class DateOfBirth
 
     public function parse(string $value): ?DateTimeImmutable
     {
-        $value = trim($value);
+        $value = trim($value, " \f\n\r\t\v\x00");
         if ($value === '') {
             return null;
         }

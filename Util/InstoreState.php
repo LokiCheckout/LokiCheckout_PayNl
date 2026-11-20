@@ -30,7 +30,7 @@ class InstoreState
         $value = trim((string)$this->scopeConfig->getValue(
             'payment/' . TerminalProvider::METHOD_CODE . '/pinmoment',
             ScopeInterface::SCOPE_STORE
-        ));
+        ), " \f\n\r\t\v\x00");
 
         return in_array($value, [self::PINMOMENT_PICKUP, self::PINMOMENT_CHOICE], true)
             ? $value

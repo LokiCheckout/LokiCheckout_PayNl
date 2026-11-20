@@ -123,7 +123,7 @@ class CustomerFieldsViewModel extends AdditionalInformationViewModel
     {
         $billingAddress = $this->getContext()->getCheckoutState()->getQuote()->getBillingAddress();
 
-        return trim((string)$billingAddress->getCompany()) !== '';
+        return trim((string)$billingAddress->getCompany(), " \f\n\r\t\v\x00") !== '';
     }
 
     private function getScopeConfig(): ScopeConfigInterface

@@ -19,7 +19,7 @@ class MinimumLengthValidator implements ValidatorInterface
             return true;
         }
 
-        $value = trim((string)$value);
+        $value = trim((string)$value, " \f\n\r\t\v\x00");
         if ($value === '') {
             return true;
         }

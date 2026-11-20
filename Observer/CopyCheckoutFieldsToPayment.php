@@ -65,7 +65,7 @@ class CopyCheckoutFieldsToPayment implements ObserverInterface
 
         $vatNumber = $this->getAddressAttribute($billingAddress, 'paynl_vat_number');
         if ($vatNumber === '') {
-            $vatNumber = trim((string)$billingAddress->getVatId());
+            $vatNumber = trim((string)$billingAddress->getVatId(), " \f\n\r\t\v\x00");
         }
 
         return [
@@ -90,7 +90,7 @@ class CopyCheckoutFieldsToPayment implements ObserverInterface
 
     private function toString(mixed $value): string
     {
-        return is_scalar($value) ? trim((string)$value) : '';
+        return is_scalar($value) ? trim((string)$value, " \f\n\r\t\v\x00") : '';
     }
 
     private function isEmpty(mixed $value): bool

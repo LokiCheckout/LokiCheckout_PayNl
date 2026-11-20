@@ -35,7 +35,7 @@ class PaymentMethodsRepositoryPlugin
         $defaultMethod = trim((string)$this->scopeConfig->getValue(
             self::DEFAULT_PAYMENT_OPTION_PATH,
             ScopeInterface::SCOPE_STORE
-        ));
+        ), " \f\n\r\t\v\x00");
 
         if ($defaultMethod === '' || $defaultMethod === '0' || $defaultMethod === $result) {
             return $result;
@@ -133,7 +133,7 @@ class PaymentMethodsRepositoryPlugin
     private function isAllowedForCompany(string $code, Quote $quote): bool
     {
         $showForCompany = (int)$this->getConfig($code, 'showforcompany');
-        $hasCompany = trim((string)$quote->getBillingAddress()->getCompany()) !== '';
+        $hasCompany = trim((string)$quote->getBillingAddress()->getCompany(), " \f\n\r\t\v\x00") !== '';
 
         return match ($showForCompany) {
             1 => false === $hasCompany,
@@ -184,6 +184,6 @@ class PaymentMethodsRepositoryPlugin
         return trim((string)$this->scopeConfig->getValue(
             'payment/' . $code . '/' . $key,
             ScopeInterface::SCOPE_STORE
-        ));
+        ), " \f\n\r\t\v\x00");
     }
 }

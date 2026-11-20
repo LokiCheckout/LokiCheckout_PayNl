@@ -70,7 +70,7 @@ class TerminalProvider
         $value = trim((string)$this->scopeConfig->getValue(
             'payment/' . self::METHOD_CODE . '/' . $key,
             ScopeInterface::SCOPE_STORE
-        ));
+        ), " \f\n\r\t\v\x00");
 
         return $value === '' ? self::NO_TERMINAL : $value;
     }
@@ -130,7 +130,7 @@ class TerminalProvider
     private function toString(mixed $value): string
     {
         if (is_string($value) || is_int($value) || is_float($value)) {
-            return trim((string)$value);
+            return trim((string)$value, " \f\n\r\t\v\x00");
         }
 
         return '';

@@ -25,7 +25,7 @@ class TerminalRepository extends AdditionalInformationRepository
     public function getValue(): mixed
     {
         $value = $this->getPropertyValue('');
-        $terminalId = is_scalar($value) ? trim((string)$value) : '';
+        $terminalId = is_scalar($value) ? trim((string)$value, " \f\n\r\t\v\x00") : '';
         if ($terminalId !== '' && $this->isValidTerminal($terminalId)) {
             return $terminalId;
         }
@@ -57,7 +57,7 @@ class TerminalRepository extends AdditionalInformationRepository
 
     public function saveValue(mixed $value): void
     {
-        $terminalId = is_scalar($value) ? trim((string)$value) : '';
+        $terminalId = is_scalar($value) ? trim((string)$value, " \f\n\r\t\v\x00") : '';
         if (false === $this->isValidTerminal($terminalId)) {
             if ($terminalId !== '') {
                 $this->getLocalMessageRegistry()->addError((string)__('Please select a valid terminal'));
