@@ -8,6 +8,6 @@ As a store developer, I want the PAY. integration to be registered with Loki Che
 
 ## Acceptance criteria
 - `LokiCheckout_PayNl` is added to the `modules` argument of `LokiCheckout\Core\Config\LokiCheckoutModules` via `etc/di.xml`.
-- The module loads after `LokiCheckout_Core`, `Loki_Components`, `Loki_CssUtils`, `Paynl_Payment` and the required Magento modules (`Magento_Backend`, `Magento_Config`, `Magento_Customer`, `Magento_Quote`, `Magento_Sales`, `Magento_Store`).
+- The module loads after `LokiCheckout_Core`, `Loki_Components`, `Loki_CssUtils`, `Loki_FieldComponents`, `Paynl_Payment` and the required Magento modules (`Magento_Backend`, `Magento_Checkout`, `Magento_Config`, `Magento_Customer`, `Magento_Payment`, `Magento_Quote`, `Magento_Sales`, `Magento_Store`).
 - The composer package `loki-checkout/magento2-pay-nl` has the keyword `loki-checkout-category-payment` and requires `paynl/magento2-plugin` `^3.0 | ^4.0`.
 - The integration test `ModuleTest` checks that the module and its dependencies are registered and enabled.
