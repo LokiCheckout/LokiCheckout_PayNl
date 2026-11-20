@@ -1,7 +1,7 @@
 <?php
 declare(strict_types=1);
 
-/** @version 2.0.23 */
+/** @version 2.1.0 */
 
 use Loki\CssUtils\Util\CssClass;
 use Magento\Framework\Escaper;
@@ -21,9 +21,9 @@ $idealFastCheckout = $viewModelFactory->create(IdealFastCheckout::class);
 $shippingAddress = $idealFastCheckout->getShippingAddress();
 
 ?>
-<form action="/paynl/checkout/fastcheckoutstart" method="post" x-data="LokiForm">
-    <input type="hidden" value="<?= $escaper->escapeHtml($shippingAddress->getCountryId()) ?>" name="selected_estimate_country"/>
-    <input type="hidden" value="<?= $escaper->escapeHtml($shippingAddress->getPostcode()) ?>" name="selected_estimate_zip"/>
+<form action="<?= $escaper->escapeUrl($block->getUrl('paynl/checkout/fastcheckoutstart')) ?>" method="post" x-data="LokiForm">
+    <input type="hidden" value="<?= $escaper->escapeHtmlAttr((string)$shippingAddress->getCountryId()) ?>" name="selected_estimate_country"/>
+    <input type="hidden" value="<?= $escaper->escapeHtmlAttr((string)$shippingAddress->getPostcode()) ?>" name="selected_estimate_zip"/>
 
     <button
         type="button"
@@ -42,5 +42,5 @@ $shippingAddress = $idealFastCheckout->getShippingAddress();
         ) ?>
     </button>
 
-    <?php echo /* @noEscape */ $block->getBlockHtml('formkey') ?>
+    <?= /* @noEscape */ $block->getBlockHtml('formkey') ?>
 </form>

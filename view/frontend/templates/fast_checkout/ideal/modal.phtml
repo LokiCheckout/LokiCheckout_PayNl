@@ -1,7 +1,7 @@
 <?php
 declare(strict_types=1);
 
-/** @version 2.0.23 */
+/** @version 2.1.0 */
 
 use Loki\CssUtils\Util\CssClass;
 use Magento\Framework\Escaper;
@@ -65,15 +65,15 @@ $shippingAddress = $idealFastCheckout->getShippingAddress();
                     <p class="<?= $escaper->escapeHtml($css('mt-4 mb-8', 'dialog-inner-content-teaser')) ?>">
                         <?= $escaper->escapeHtml(__('Create an iDEAL profile and save your address for your next order')) ?>
                     </p>
-                    <form action="/paynl/checkout/fastcheckoutstart" method="post">
+                    <form action="<?= $escaper->escapeUrl($block->getUrl('paynl/checkout/fastcheckoutstart')) ?>" method="post">
                         <input
                             type="hidden"
-                            value="<?= $escaper->escapeHtml($shippingAddress->getCountryId()) ?>"
+                            value="<?= $escaper->escapeHtmlAttr((string)$shippingAddress->getCountryId()) ?>"
                             name="selected_estimate_country"
                         >
                         <input
                             type="hidden"
-                            value="<?= $escaper->escapeHtml($shippingAddress->getPostcode()) ?>"
+                            value="<?= $escaper->escapeHtmlAttr((string)$shippingAddress->getPostcode()) ?>"
                             name="selected_estimate_zip"
                         >
                         <div class="flex flex-wrap gap-4">
