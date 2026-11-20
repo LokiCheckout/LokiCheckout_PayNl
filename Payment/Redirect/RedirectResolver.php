@@ -2,28 +2,37 @@
 
 namespace LokiCheckout\PayNl\Payment\Redirect;
 
-use Magento\Sales\Api\Data\OrderInterface;
-use Magento\Sales\Model\Order;
-use Paynl\Payment\Model\Paymentmethod\Paymentmethod;
 use LokiCheckout\Core\Payment\Redirect\RedirectResolverInterface;
 use LokiCheckout\Core\Step\FinalStep\RedirectContext;
+use Magento\Framework\UrlInterface;
+use Magento\Sales\Api\Data\OrderInterface;
+use Paynl\Payment\Model\Paymentmethod\PaymentMethod;
+use Throwable;
 
 class RedirectResolver implements RedirectResolverInterface
 {
+    public const REDIRECT_ROUTE = 'paynl/checkout/redirect';
+
+    public function __construct(
+        private readonly UrlInterface $urlBuilder,
+    ) {
+    }
+
     public function resolve(RedirectContext $redirectContext): false|string
     {
-        $paymentMethod = $redirectContext->getPaymentMethod();
-        // @phpstan-ignore class.notFound
-        if (false === $paymentMethod instanceof Paymentmethod) {
+        try {
+            $paymentMethod = $redirectContext->getPaymentMethod();
+            if (false === $paymentMethod instanceof PaymentMethod) {
+                return false;
+            }
+
+            if (false === $redirectContext->getOrder() instanceof OrderInterface) {
+                return false;
+            }
+        } catch (Throwable) {
             return false;
         }
 
-        /** @var Order $order */
-        $order = $redirectContext->getOrder();
-        if (false === $order instanceof OrderInterface) {
-            return false;
-        }
-
-        return $paymentMethod->startTransaction($order);
+        return $this->urlBuilder->getUrl(self::REDIRECT_ROUTE, ['_query' => ['nocache' => time()]]);
     }
 }

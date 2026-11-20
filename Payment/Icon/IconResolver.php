@@ -2,16 +2,19 @@
 
 namespace LokiCheckout\PayNl\Payment\Icon;
 
-use Magento\Framework\Module\Manager as ModuleManager;
-use Paynl\Payment\Model\Config;
 use LokiCheckout\Core\Payment\Icon\IconResolverContext;
 use LokiCheckout\Core\Payment\Icon\IconResolverInterface;
+use Magento\Framework\App\Config\ScopeConfigInterface;
+use Magento\Framework\Module\Manager as ModuleManager;
+use Magento\Store\Model\ScopeInterface;
+use Paynl\Payment\Model\Config;
 
 class IconResolver implements IconResolverInterface
 {
     public function __construct(
-        private Config $config,
-        private ModuleManager $moduleManager,
+        private readonly Config $config,
+        private readonly ModuleManager $moduleManager,
+        private readonly ScopeConfigInterface $scopeConfig,
     ) {
     }
 
@@ -22,17 +25,27 @@ class IconResolver implements IconResolverInterface
             return false;
         }
 
-        if (!preg_match('/^paynl_(.*)$/', $paymentMethodCode)) {
+        if (false === str_starts_with($paymentMethodCode, 'paynl_')) {
             return false;
         }
 
         $htmlAttributes = [
-            'alt' => $paymentMethodCode,
+            'alt' => $this->getTitle($paymentMethodCode),
         ];
 
         return $iconResolverContext->getIconOutput(
             $this->config->getIconUrl($paymentMethodCode),
             htmlAttributes: $htmlAttributes,
         );
+    }
+
+    public function getTitle(string $paymentMethodCode): string
+    {
+        $title = trim((string)$this->scopeConfig->getValue(
+            'payment/' . $paymentMethodCode . '/title',
+            ScopeInterface::SCOPE_STORE
+        ));
+
+        return $title !== '' ? $title : $paymentMethodCode;
     }
 }
