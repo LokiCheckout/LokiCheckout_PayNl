@@ -5,6 +5,7 @@ namespace LokiCheckout\PayNl\Payment\Redirect;
 use LokiCheckout\Core\Payment\Redirect\RedirectResolverInterface;
 use LokiCheckout\Core\Step\FinalStep\RedirectContext;
 use Magento\Framework\UrlInterface;
+use Magento\Quote\Model\QuoteIdToMaskedQuoteIdInterface;
 use Magento\Sales\Api\Data\OrderInterface;
 use Paynl\Payment\Model\Paymentmethod\PaymentMethod;
 use Throwable;
@@ -15,6 +16,7 @@ class RedirectResolver implements RedirectResolverInterface
 
     public function __construct(
         private readonly UrlInterface $urlBuilder,
+        private readonly QuoteIdToMaskedQuoteIdInterface $quoteIdToMaskedQuoteId,
     ) {
     }
 
@@ -26,13 +28,35 @@ class RedirectResolver implements RedirectResolverInterface
                 return false;
             }
 
-            if (false === $redirectContext->getOrder() instanceof OrderInterface) {
+            $order = $redirectContext->getOrder();
+            if (false === $order instanceof OrderInterface) {
                 return false;
             }
         } catch (Throwable) {
             return false;
         }
 
-        return $this->urlBuilder->getUrl(self::REDIRECT_ROUTE, ['_query' => ['nocache' => time()]]);
+        return $this->urlBuilder->getUrl(self::REDIRECT_ROUTE, [
+            '_query' => [
+                'nocache' => time(),
+                'mqid' => $this->getQuoteIdentifier($order),
+            ],
+        ]);
+    }
+
+    public function getQuoteIdentifier(OrderInterface $order): string
+    {
+        $quoteId = (int)$order->getQuoteId();
+        if ((int)$order->getCustomerId() > 0) {
+            return (string)$quoteId;
+        }
+
+        try {
+            $maskedQuoteId = $this->quoteIdToMaskedQuoteId->execute($quoteId);
+        } catch (Throwable) {
+            return (string)$quoteId;
+        }
+
+        return $maskedQuoteId !== '' ? $maskedQuoteId : (string)$quoteId;
     }
 }

@@ -248,6 +248,10 @@
         <target name="loki-checkout.payment.methods"/>
     </component>
 
+    <component name="loki-checkout.shipping.address.company">
+        <target name="loki-checkout.payment.methods"/>
+    </component>
+
     <component name="loki-checkout.shipping.methods">
         <target name="loki-checkout.payment.methods"/>
     </component>
