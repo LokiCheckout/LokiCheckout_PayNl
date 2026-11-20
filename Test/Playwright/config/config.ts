@@ -38,5 +38,14 @@ export default {
         'payment/paynl_payment_mastercard/active': '1',
         'payment/paynl_payment_paypal/active': '1',
         'payment/paynl_payment_visamastercard/active': '1',
+        'payment/paynl/default_payment_option': '0',
+        'payment/paynl_payment_billink/showdob': '0',
+        'payment/paynl_payment_billink/showkvk': '0',
+        'payment/paynl_payment_billink/showvat': '0',
+        'payment/paynl_payment_billink/showforcompany': '0',
+        'payment/paynl_payment_ideal/fast_checkout_show_modal': '1',
+        'payment/paynl_payment_ideal/fast_checkout_guest_only': '0',
+        'loki_checkout/paynl/ideal_fast_checkout_enabled': '1',
+        'loki_checkout/billing/select_default_payment_method': '0',
     }
 };
