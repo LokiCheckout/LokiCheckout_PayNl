@@ -18,8 +18,8 @@ class PinMomentOptions implements OptionModelInterface, ArgumentInterface
     public function getOptions(ComponentViewModelInterface $viewModel): array
     {
         return [
-            $this->optionFactory->create(InstoreState::PINMOMENT_CHECKOUT, 'Pay now'),
-            $this->optionFactory->create(InstoreState::PINMOMENT_PICKUP, 'Pay at the pickup location'),
+            $this->optionFactory->create(InstoreState::PINMOMENT_CHECKOUT, (string)__('Pay now')),
+            $this->optionFactory->create(InstoreState::PINMOMENT_PICKUP, (string)__('Pay at the pickup location')),
         ];
     }
 }
