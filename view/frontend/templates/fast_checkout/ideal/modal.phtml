@@ -39,11 +39,12 @@ $shippingAddress = $idealFastCheckout->getShippingAddress();
         ) ?>
     </button>
 
-    <dialog x-ref="modal" class="<?= $escaper->escapeHtml($css('border border-zinc-200 rounded-lg shadow-lg p-10 text-start', 'dialog')) ?>">
+    <dialog x-ref="modal" aria-labelledby="paynl-ideal-fast-checkout-title" class="<?= $escaper->escapeHtml($css('border border-zinc-200 rounded-lg shadow-lg p-10 text-start', 'dialog')) ?>">
         <div class="flex items-start gap-8">
             <button
                 type="button"
                 @click="toggleModal"
+                aria-label="<?= $escaper->escapeHtmlAttr(__('Close')) ?>"
                 class="<?= $escaper->escapeHtml($css('order-last', 'dialog-close')) ?>"
             >
                 <?= /* @noEscape */ $imageRenderer->icon($block, 'xmark') ?>
@@ -54,7 +55,7 @@ $shippingAddress = $idealFastCheckout->getShippingAddress();
                     <?= /* @noEscape */ $imageRenderer->get('Paynl_Payment::images/ideal-visual.webp', ['alt' => __('iDeal'), 'width' => '224', 'height' => '200']) ?>
                 </div>
                 <div class="<?= $escaper->escapeHtml($css('', 'dialog-inner-content')) ?>">
-                    <p class="<?= $escaper->escapeHtml($css('text-3xl', 'dialog-inner-content-label')) ?>">
+                    <p id="paynl-ideal-fast-checkout-title" class="<?= $escaper->escapeHtml($css('text-3xl', 'dialog-inner-content-label')) ?>">
                         <strong class="font-normal">
                             <span class="<?= $escaper->escapeHtml($css('text-[#cc0066]', 'dialog-inner-content-label-span')) ?>">
                                 <?= $escaper->escapeHtml(__('Order faster')) ?>

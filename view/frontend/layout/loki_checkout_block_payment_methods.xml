@@ -177,6 +177,7 @@
                 template="Loki_FieldComponents::form/field.phtml">
                 <arguments>
                     <argument name="field_label" xsi:type="string">Company name</argument>
+                    <argument name="autocomplete" xsi:type="string">organization</argument>
                     <argument name="required_error_message" xsi:type="string">Please enter your company name</argument>
                 </arguments>
             </block>
