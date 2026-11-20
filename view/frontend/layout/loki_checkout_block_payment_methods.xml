@@ -1,0 +1,570 @@
+<?xml version="1.0"?>
+<page xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:module:View/Layout:etc/page_configuration.xsd">
+    <body>
+        <block
+            name="loki-checkout.payment.methods.paynl_payment_afterpay.form"
+            template="LokiCheckout_Core::generic/container.phtml">
+            <arguments>
+                <argument name="css_classes" xsi:type="array">
+                    <item name="block" xsi:type="array">
+                        <item name="default" xsi:type="string">my-4</item>
+                    </item>
+                </argument>
+            </arguments>
+
+            <block
+                name="loki-checkout.payment.methods.paynl_payment_afterpay.form.dob" as="dob"
+                template="Loki_FieldComponents::form/field.phtml">
+                <arguments>
+                    <argument name="field_label" xsi:type="string">Date of birth</argument>
+                    <argument name="input_type" xsi:type="string">date</argument>
+                    <argument name="min_date" xsi:type="string">120 years ago</argument>
+                    <argument name="max_date" xsi:type="string">yesterday</argument>
+                    <argument name="autocomplete" xsi:type="string">bday</argument>
+                    <argument name="required_error_message" xsi:type="string">Please enter a valid date of birth</argument>
+                </arguments>
+            </block>
+
+            <block
+                name="loki-checkout.payment.methods.paynl_payment_afterpay.form.cocnumber" as="cocnumber"
+                template="Loki_FieldComponents::form/field.phtml">
+                <arguments>
+                    <argument name="field_label" xsi:type="string">CoC number</argument>
+                    <argument name="required_error_message" xsi:type="string">Please enter a valid CoC number</argument>
+                </arguments>
+            </block>
+
+            <block
+                name="loki-checkout.payment.methods.paynl_payment_afterpay.form.vatnumber" as="vatnumber"
+                template="Loki_FieldComponents::form/field.phtml">
+                <arguments>
+                    <argument name="field_label" xsi:type="string">VAT number</argument>
+                    <argument name="required_error_message" xsi:type="string">Please enter a valid VAT number</argument>
+                </arguments>
+            </block>
+        </block>
+
+        <block
+            name="loki-checkout.payment.methods.paynl_payment_afterpay_international.form"
+            template="LokiCheckout_Core::generic/container.phtml">
+            <arguments>
+                <argument name="css_classes" xsi:type="array">
+                    <item name="block" xsi:type="array">
+                        <item name="default" xsi:type="string">my-4</item>
+                    </item>
+                </argument>
+            </arguments>
+
+            <block
+                name="loki-checkout.payment.methods.paynl_payment_afterpay_international.form.dob" as="dob"
+                template="Loki_FieldComponents::form/field.phtml">
+                <arguments>
+                    <argument name="field_label" xsi:type="string">Date of birth</argument>
+                    <argument name="input_type" xsi:type="string">date</argument>
+                    <argument name="min_date" xsi:type="string">120 years ago</argument>
+                    <argument name="max_date" xsi:type="string">yesterday</argument>
+                    <argument name="autocomplete" xsi:type="string">bday</argument>
+                    <argument name="required_error_message" xsi:type="string">Please enter a valid date of birth</argument>
+                </arguments>
+            </block>
+
+            <block
+                name="loki-checkout.payment.methods.paynl_payment_afterpay_international.form.cocnumber" as="cocnumber"
+                template="Loki_FieldComponents::form/field.phtml">
+                <arguments>
+                    <argument name="field_label" xsi:type="string">CoC number</argument>
+                    <argument name="required_error_message" xsi:type="string">Please enter a valid CoC number</argument>
+                </arguments>
+            </block>
+
+            <block
+                name="loki-checkout.payment.methods.paynl_payment_afterpay_international.form.vatnumber" as="vatnumber"
+                template="Loki_FieldComponents::form/field.phtml">
+                <arguments>
+                    <argument name="field_label" xsi:type="string">VAT number</argument>
+                    <argument name="required_error_message" xsi:type="string">Please enter a valid VAT number</argument>
+                </arguments>
+            </block>
+        </block>
+
+        <block
+            name="loki-checkout.payment.methods.paynl_payment_alma.form"
+            template="LokiCheckout_Core::generic/container.phtml">
+            <arguments>
+                <argument name="css_classes" xsi:type="array">
+                    <item name="block" xsi:type="array">
+                        <item name="default" xsi:type="string">my-4</item>
+                    </item>
+                </argument>
+            </arguments>
+
+            <block
+                name="loki-checkout.payment.methods.paynl_payment_alma.form.dob" as="dob"
+                template="Loki_FieldComponents::form/field.phtml">
+                <arguments>
+                    <argument name="field_label" xsi:type="string">Date of birth</argument>
+                    <argument name="input_type" xsi:type="string">date</argument>
+                    <argument name="min_date" xsi:type="string">120 years ago</argument>
+                    <argument name="max_date" xsi:type="string">yesterday</argument>
+                    <argument name="autocomplete" xsi:type="string">bday</argument>
+                    <argument name="required_error_message" xsi:type="string">Please enter a valid date of birth</argument>
+                </arguments>
+            </block>
+
+            <block
+                name="loki-checkout.payment.methods.paynl_payment_alma.form.cocnumber" as="cocnumber"
+                template="Loki_FieldComponents::form/field.phtml">
+                <arguments>
+                    <argument name="field_label" xsi:type="string">CoC number</argument>
+                    <argument name="required_error_message" xsi:type="string">Please enter a valid CoC number</argument>
+                </arguments>
+            </block>
+
+            <block
+                name="loki-checkout.payment.methods.paynl_payment_alma.form.vatnumber" as="vatnumber"
+                template="Loki_FieldComponents::form/field.phtml">
+                <arguments>
+                    <argument name="field_label" xsi:type="string">VAT number</argument>
+                    <argument name="required_error_message" xsi:type="string">Please enter a valid VAT number</argument>
+                </arguments>
+            </block>
+        </block>
+
+        <block
+            name="loki-checkout.payment.methods.paynl_payment_biller.form"
+            template="LokiCheckout_Core::generic/container.phtml">
+            <arguments>
+                <argument name="css_classes" xsi:type="array">
+                    <item name="block" xsi:type="array">
+                        <item name="default" xsi:type="string">my-4</item>
+                    </item>
+                </argument>
+            </arguments>
+
+            <block
+                name="loki-checkout.payment.methods.paynl_payment_biller.form.dob" as="dob"
+                template="Loki_FieldComponents::form/field.phtml">
+                <arguments>
+                    <argument name="field_label" xsi:type="string">Date of birth</argument>
+                    <argument name="input_type" xsi:type="string">date</argument>
+                    <argument name="min_date" xsi:type="string">120 years ago</argument>
+                    <argument name="max_date" xsi:type="string">yesterday</argument>
+                    <argument name="autocomplete" xsi:type="string">bday</argument>
+                    <argument name="required_error_message" xsi:type="string">Please enter a valid date of birth</argument>
+                </arguments>
+            </block>
+
+            <block
+                name="loki-checkout.payment.methods.paynl_payment_biller.form.cocnumber" as="cocnumber"
+                template="Loki_FieldComponents::form/field.phtml">
+                <arguments>
+                    <argument name="field_label" xsi:type="string">CoC number</argument>
+                    <argument name="required_error_message" xsi:type="string">Please enter a valid CoC number</argument>
+                </arguments>
+            </block>
+
+            <block
+                name="loki-checkout.payment.methods.paynl_payment_biller.form.vatnumber" as="vatnumber"
+                template="Loki_FieldComponents::form/field.phtml">
+                <arguments>
+                    <argument name="field_label" xsi:type="string">VAT number</argument>
+                    <argument name="required_error_message" xsi:type="string">Please enter a valid VAT number</argument>
+                </arguments>
+            </block>
+
+            <block
+                name="loki-checkout.payment.methods.paynl_payment_biller.form.companyfield" as="companyfield"
+                template="Loki_FieldComponents::form/field.phtml">
+                <arguments>
+                    <argument name="field_label" xsi:type="string">Company name</argument>
+                    <argument name="required_error_message" xsi:type="string">Please enter your company name</argument>
+                </arguments>
+            </block>
+        </block>
+
+        <block
+            name="loki-checkout.payment.methods.paynl_payment_billink.form"
+            template="LokiCheckout_Core::generic/container.phtml">
+            <arguments>
+                <argument name="css_classes" xsi:type="array">
+                    <item name="block" xsi:type="array">
+                        <item name="default" xsi:type="string">my-4</item>
+                    </item>
+                </argument>
+            </arguments>
+
+            <block
+                name="loki-checkout.payment.methods.paynl_payment_billink.form.dob" as="dob"
+                template="Loki_FieldComponents::form/field.phtml">
+                <arguments>
+                    <argument name="field_label" xsi:type="string">Date of birth</argument>
+                    <argument name="input_type" xsi:type="string">date</argument>
+                    <argument name="min_date" xsi:type="string">120 years ago</argument>
+                    <argument name="max_date" xsi:type="string">yesterday</argument>
+                    <argument name="autocomplete" xsi:type="string">bday</argument>
+                    <argument name="required_error_message" xsi:type="string">Please enter a valid date of birth</argument>
+                </arguments>
+            </block>
+
+            <block
+                name="loki-checkout.payment.methods.paynl_payment_billink.form.cocnumber" as="cocnumber"
+                template="Loki_FieldComponents::form/field.phtml">
+                <arguments>
+                    <argument name="field_label" xsi:type="string">CoC number</argument>
+                    <argument name="required_error_message" xsi:type="string">Please enter a valid CoC number</argument>
+                </arguments>
+            </block>
+
+            <block
+                name="loki-checkout.payment.methods.paynl_payment_billink.form.vatnumber" as="vatnumber"
+                template="Loki_FieldComponents::form/field.phtml">
+                <arguments>
+                    <argument name="field_label" xsi:type="string">VAT number</argument>
+                    <argument name="required_error_message" xsi:type="string">Please enter a valid VAT number</argument>
+                </arguments>
+            </block>
+
+            <block
+                name="loki-checkout.payment.methods.paynl_payment_billink.form.billink_agree" as="billink_agree"
+                template="Loki_FieldComponents::form/field.phtml">
+                <arguments>
+                    <argument name="field_label" xsi:type="string">Terms and conditions</argument>
+                    <argument name="field_type" xsi:type="string">checkbox</argument>
+                    <argument name="input_label" xsi:type="string">I agree with the payment terms of Billink</argument>
+                    <argument name="required_error_message" xsi:type="string">Please agree to these terms</argument>
+                </arguments>
+            </block>
+        </block>
+
+        <block
+            name="loki-checkout.payment.methods.paynl_payment_capayable_gespreid.form"
+            template="LokiCheckout_Core::generic/container.phtml">
+            <arguments>
+                <argument name="css_classes" xsi:type="array">
+                    <item name="block" xsi:type="array">
+                        <item name="default" xsi:type="string">my-4</item>
+                    </item>
+                </argument>
+            </arguments>
+
+            <block
+                name="loki-checkout.payment.methods.paynl_payment_capayable_gespreid.form.dob" as="dob"
+                template="Loki_FieldComponents::form/field.phtml">
+                <arguments>
+                    <argument name="field_label" xsi:type="string">Date of birth</argument>
+                    <argument name="input_type" xsi:type="string">date</argument>
+                    <argument name="min_date" xsi:type="string">120 years ago</argument>
+                    <argument name="max_date" xsi:type="string">yesterday</argument>
+                    <argument name="autocomplete" xsi:type="string">bday</argument>
+                    <argument name="required_error_message" xsi:type="string">Please enter a valid date of birth</argument>
+                </arguments>
+            </block>
+
+            <block
+                name="loki-checkout.payment.methods.paynl_payment_capayable_gespreid.form.cocnumber" as="cocnumber"
+                template="Loki_FieldComponents::form/field.phtml">
+                <arguments>
+                    <argument name="field_label" xsi:type="string">CoC number</argument>
+                    <argument name="required_error_message" xsi:type="string">Please enter a valid CoC number</argument>
+                </arguments>
+            </block>
+
+            <block
+                name="loki-checkout.payment.methods.paynl_payment_capayable_gespreid.form.vatnumber" as="vatnumber"
+                template="Loki_FieldComponents::form/field.phtml">
+                <arguments>
+                    <argument name="field_label" xsi:type="string">VAT number</argument>
+                    <argument name="required_error_message" xsi:type="string">Please enter a valid VAT number</argument>
+                </arguments>
+            </block>
+        </block>
+
+        <block
+            name="loki-checkout.payment.methods.paynl_payment_in3business.form"
+            template="LokiCheckout_Core::generic/container.phtml">
+            <arguments>
+                <argument name="css_classes" xsi:type="array">
+                    <item name="block" xsi:type="array">
+                        <item name="default" xsi:type="string">my-4</item>
+                    </item>
+                </argument>
+            </arguments>
+
+            <block
+                name="loki-checkout.payment.methods.paynl_payment_in3business.form.dob" as="dob"
+                template="Loki_FieldComponents::form/field.phtml">
+                <arguments>
+                    <argument name="field_label" xsi:type="string">Date of birth</argument>
+                    <argument name="input_type" xsi:type="string">date</argument>
+                    <argument name="min_date" xsi:type="string">120 years ago</argument>
+                    <argument name="max_date" xsi:type="string">yesterday</argument>
+                    <argument name="autocomplete" xsi:type="string">bday</argument>
+                    <argument name="required_error_message" xsi:type="string">Please enter a valid date of birth</argument>
+                </arguments>
+            </block>
+
+            <block
+                name="loki-checkout.payment.methods.paynl_payment_in3business.form.cocnumber" as="cocnumber"
+                template="Loki_FieldComponents::form/field.phtml">
+                <arguments>
+                    <argument name="field_label" xsi:type="string">CoC number</argument>
+                    <argument name="required_error_message" xsi:type="string">Please enter a valid CoC number</argument>
+                </arguments>
+            </block>
+
+            <block
+                name="loki-checkout.payment.methods.paynl_payment_in3business.form.vatnumber" as="vatnumber"
+                template="Loki_FieldComponents::form/field.phtml">
+                <arguments>
+                    <argument name="field_label" xsi:type="string">VAT number</argument>
+                    <argument name="required_error_message" xsi:type="string">Please enter a valid VAT number</argument>
+                </arguments>
+            </block>
+        </block>
+
+        <block
+            name="loki-checkout.payment.methods.paynl_payment_klarna.form"
+            template="LokiCheckout_Core::generic/container.phtml">
+            <arguments>
+                <argument name="css_classes" xsi:type="array">
+                    <item name="block" xsi:type="array">
+                        <item name="default" xsi:type="string">my-4</item>
+                    </item>
+                </argument>
+            </arguments>
+
+            <block
+                name="loki-checkout.payment.methods.paynl_payment_klarna.form.dob" as="dob"
+                template="Loki_FieldComponents::form/field.phtml">
+                <arguments>
+                    <argument name="field_label" xsi:type="string">Date of birth</argument>
+                    <argument name="input_type" xsi:type="string">date</argument>
+                    <argument name="min_date" xsi:type="string">120 years ago</argument>
+                    <argument name="max_date" xsi:type="string">yesterday</argument>
+                    <argument name="autocomplete" xsi:type="string">bday</argument>
+                    <argument name="required_error_message" xsi:type="string">Please enter a valid date of birth</argument>
+                </arguments>
+            </block>
+
+            <block
+                name="loki-checkout.payment.methods.paynl_payment_klarna.form.cocnumber" as="cocnumber"
+                template="Loki_FieldComponents::form/field.phtml">
+                <arguments>
+                    <argument name="field_label" xsi:type="string">CoC number</argument>
+                    <argument name="required_error_message" xsi:type="string">Please enter a valid CoC number</argument>
+                </arguments>
+            </block>
+
+            <block
+                name="loki-checkout.payment.methods.paynl_payment_klarna.form.vatnumber" as="vatnumber"
+                template="Loki_FieldComponents::form/field.phtml">
+                <arguments>
+                    <argument name="field_label" xsi:type="string">VAT number</argument>
+                    <argument name="required_error_message" xsi:type="string">Please enter a valid VAT number</argument>
+                </arguments>
+            </block>
+        </block>
+
+        <block
+            name="loki-checkout.payment.methods.paynl_payment_klarnakp.form"
+            template="LokiCheckout_Core::generic/container.phtml">
+            <arguments>
+                <argument name="css_classes" xsi:type="array">
+                    <item name="block" xsi:type="array">
+                        <item name="default" xsi:type="string">my-4</item>
+                    </item>
+                </argument>
+            </arguments>
+
+            <block
+                name="loki-checkout.payment.methods.paynl_payment_klarnakp.form.dob" as="dob"
+                template="Loki_FieldComponents::form/field.phtml">
+                <arguments>
+                    <argument name="field_label" xsi:type="string">Date of birth</argument>
+                    <argument name="input_type" xsi:type="string">date</argument>
+                    <argument name="min_date" xsi:type="string">120 years ago</argument>
+                    <argument name="max_date" xsi:type="string">yesterday</argument>
+                    <argument name="autocomplete" xsi:type="string">bday</argument>
+                    <argument name="required_error_message" xsi:type="string">Please enter a valid date of birth</argument>
+                </arguments>
+            </block>
+
+            <block
+                name="loki-checkout.payment.methods.paynl_payment_klarnakp.form.cocnumber" as="cocnumber"
+                template="Loki_FieldComponents::form/field.phtml">
+                <arguments>
+                    <argument name="field_label" xsi:type="string">CoC number</argument>
+                    <argument name="required_error_message" xsi:type="string">Please enter a valid CoC number</argument>
+                </arguments>
+            </block>
+
+            <block
+                name="loki-checkout.payment.methods.paynl_payment_klarnakp.form.vatnumber" as="vatnumber"
+                template="Loki_FieldComponents::form/field.phtml">
+                <arguments>
+                    <argument name="field_label" xsi:type="string">VAT number</argument>
+                    <argument name="required_error_message" xsi:type="string">Please enter a valid VAT number</argument>
+                </arguments>
+            </block>
+        </block>
+
+        <block
+            name="loki-checkout.payment.methods.paynl_payment_spraypay.form"
+            template="LokiCheckout_Core::generic/container.phtml">
+            <arguments>
+                <argument name="css_classes" xsi:type="array">
+                    <item name="block" xsi:type="array">
+                        <item name="default" xsi:type="string">my-4</item>
+                    </item>
+                </argument>
+            </arguments>
+
+            <block
+                name="loki-checkout.payment.methods.paynl_payment_spraypay.form.dob" as="dob"
+                template="Loki_FieldComponents::form/field.phtml">
+                <arguments>
+                    <argument name="field_label" xsi:type="string">Date of birth</argument>
+                    <argument name="input_type" xsi:type="string">date</argument>
+                    <argument name="min_date" xsi:type="string">120 years ago</argument>
+                    <argument name="max_date" xsi:type="string">yesterday</argument>
+                    <argument name="autocomplete" xsi:type="string">bday</argument>
+                    <argument name="required_error_message" xsi:type="string">Please enter a valid date of birth</argument>
+                </arguments>
+            </block>
+
+            <block
+                name="loki-checkout.payment.methods.paynl_payment_spraypay.form.cocnumber" as="cocnumber"
+                template="Loki_FieldComponents::form/field.phtml">
+                <arguments>
+                    <argument name="field_label" xsi:type="string">CoC number</argument>
+                    <argument name="required_error_message" xsi:type="string">Please enter a valid CoC number</argument>
+                </arguments>
+            </block>
+
+            <block
+                name="loki-checkout.payment.methods.paynl_payment_spraypay.form.vatnumber" as="vatnumber"
+                template="Loki_FieldComponents::form/field.phtml">
+                <arguments>
+                    <argument name="field_label" xsi:type="string">VAT number</argument>
+                    <argument name="required_error_message" xsi:type="string">Please enter a valid VAT number</argument>
+                </arguments>
+            </block>
+        </block>
+
+        <block
+            name="loki-checkout.payment.methods.paynl_payment_xafaxmynetpay.form"
+            template="LokiCheckout_Core::generic/container.phtml">
+            <arguments>
+                <argument name="css_classes" xsi:type="array">
+                    <item name="block" xsi:type="array">
+                        <item name="default" xsi:type="string">my-4</item>
+                    </item>
+                </argument>
+            </arguments>
+
+            <block
+                name="loki-checkout.payment.methods.paynl_payment_xafaxmynetpay.form.dob" as="dob"
+                template="Loki_FieldComponents::form/field.phtml">
+                <arguments>
+                    <argument name="field_label" xsi:type="string">Date of birth</argument>
+                    <argument name="input_type" xsi:type="string">date</argument>
+                    <argument name="min_date" xsi:type="string">120 years ago</argument>
+                    <argument name="max_date" xsi:type="string">yesterday</argument>
+                    <argument name="autocomplete" xsi:type="string">bday</argument>
+                    <argument name="required_error_message" xsi:type="string">Please enter a valid date of birth</argument>
+                </arguments>
+            </block>
+
+            <block
+                name="loki-checkout.payment.methods.paynl_payment_xafaxmynetpay.form.cocnumber" as="cocnumber"
+                template="Loki_FieldComponents::form/field.phtml">
+                <arguments>
+                    <argument name="field_label" xsi:type="string">CoC number</argument>
+                    <argument name="required_error_message" xsi:type="string">Please enter a valid CoC number</argument>
+                </arguments>
+            </block>
+
+            <block
+                name="loki-checkout.payment.methods.paynl_payment_xafaxmynetpay.form.vatnumber" as="vatnumber"
+                template="Loki_FieldComponents::form/field.phtml">
+                <arguments>
+                    <argument name="field_label" xsi:type="string">VAT number</argument>
+                    <argument name="required_error_message" xsi:type="string">Please enter a valid VAT number</argument>
+                </arguments>
+            </block>
+        </block>
+
+        <block
+            name="loki-checkout.payment.methods.paynl_payment_yourgift.form"
+            template="LokiCheckout_Core::generic/container.phtml">
+            <arguments>
+                <argument name="css_classes" xsi:type="array">
+                    <item name="block" xsi:type="array">
+                        <item name="default" xsi:type="string">my-4</item>
+                    </item>
+                </argument>
+            </arguments>
+
+            <block
+                name="loki-checkout.payment.methods.paynl_payment_yourgift.form.dob" as="dob"
+                template="Loki_FieldComponents::form/field.phtml">
+                <arguments>
+                    <argument name="field_label" xsi:type="string">Date of birth</argument>
+                    <argument name="input_type" xsi:type="string">date</argument>
+                    <argument name="min_date" xsi:type="string">120 years ago</argument>
+                    <argument name="max_date" xsi:type="string">yesterday</argument>
+                    <argument name="autocomplete" xsi:type="string">bday</argument>
+                    <argument name="required_error_message" xsi:type="string">Please enter a valid date of birth</argument>
+                </arguments>
+            </block>
+
+            <block
+                name="loki-checkout.payment.methods.paynl_payment_yourgift.form.cocnumber" as="cocnumber"
+                template="Loki_FieldComponents::form/field.phtml">
+                <arguments>
+                    <argument name="field_label" xsi:type="string">CoC number</argument>
+                    <argument name="required_error_message" xsi:type="string">Please enter a valid CoC number</argument>
+                </arguments>
+            </block>
+
+            <block
+                name="loki-checkout.payment.methods.paynl_payment_yourgift.form.vatnumber" as="vatnumber"
+                template="Loki_FieldComponents::form/field.phtml">
+                <arguments>
+                    <argument name="field_label" xsi:type="string">VAT number</argument>
+                    <argument name="required_error_message" xsi:type="string">Please enter a valid VAT number</argument>
+                </arguments>
+            </block>
+        </block>
+
+        <block
+            name="loki-checkout.payment.methods.paynl_payment_instore.form"
+            template="LokiCheckout_Core::generic/container.phtml">
+            <arguments>
+                <argument name="css_classes" xsi:type="array">
+                    <item name="block" xsi:type="array">
+                        <item name="default" xsi:type="string">my-4</item>
+                    </item>
+                </argument>
+            </arguments>
+
+            <block
+                name="loki-checkout.payment.methods.paynl_payment_instore.form.pinmoment" as="pinmoment"
+                template="Loki_FieldComponents::form/field.phtml">
+                <arguments>
+                    <argument name="field_label" xsi:type="string">When do you want to pay?</argument>
+                    <argument name="field_type" xsi:type="string">radio</argument>
+                </arguments>
+            </block>
+
+            <block
+                name="loki-checkout.payment.methods.paynl_payment_instore.form.payment_option" as="payment_option"
+                template="LokiCheckout_PayNl::checkout/payment/method/instore/terminals.phtml">
+                <arguments>
+                    <argument name="required_error_message" xsi:type="string">Please select a valid terminal</argument>
+                </arguments>
+            </block>
+        </block>
+
+    </body>
+</page>

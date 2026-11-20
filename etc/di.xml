@@ -7,4 +7,28 @@
             </argument>
         </arguments>
     </type>
+
+    <virtualType name="LokiCheckout\PayNl\Validator\CocNumberValidator" type="LokiCheckout\PayNl\Validator\MinimumLengthValidator">
+        <arguments>
+            <argument name="errorMessage" xsi:type="string">Please enter a valid CoC number</argument>
+            <argument name="minimumLength" xsi:type="number">8</argument>
+        </arguments>
+    </virtualType>
+
+    <virtualType name="LokiCheckout\PayNl\Validator\VatNumberValidator" type="LokiCheckout\PayNl\Validator\MinimumLengthValidator">
+        <arguments>
+            <argument name="errorMessage" xsi:type="string">Please enter a valid VAT number</argument>
+            <argument name="minimumLength" xsi:type="number">8</argument>
+        </arguments>
+    </virtualType>
+
+    <type name="Loki\Components\Validator\ValidatorRegistry">
+        <arguments>
+            <argument name="validators" xsi:type="array">
+                <item name="paynl_coc" xsi:type="object">LokiCheckout\PayNl\Validator\CocNumberValidator</item>
+                <item name="paynl_vat" xsi:type="object">LokiCheckout\PayNl\Validator\VatNumberValidator</item>
+                <item name="paynl_dob" xsi:type="object">LokiCheckout\PayNl\Validator\DobValidator</item>
+            </argument>
+        </arguments>
+    </type>
 </config>

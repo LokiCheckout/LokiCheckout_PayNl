@@ -15,4 +15,18 @@
             </argument>
         </arguments>
     </type>
+
+    <type name="LokiCheckout\Core\Component\Checkout\Billing\PaymentMethods\PaymentMethodsViewModel">
+        <plugin name="LokiCheckout_PayNl::addPaymentInstructions" type="LokiCheckout\PayNl\Plugin\AddPaymentInstructionsPlugin"/>
+    </type>
+
+    <type name="LokiCheckout\Core\Component\Checkout\Billing\PaymentMethods\PaymentMethodsRepository">
+        <plugin name="LokiCheckout_PayNl::filterPaymentMethods" type="LokiCheckout\PayNl\Plugin\PaymentMethodsRepositoryPlugin" sortOrder="20"/>
+    </type>
+
+    <type name="LokiCheckout\PayNl\Plugin\PaymentMethodsRepositoryPlugin">
+        <arguments>
+            <argument name="checkoutState" xsi:type="object">LokiCheckout\Core\ViewModel\CheckoutState\Proxy</argument>
+        </arguments>
+    </type>
 </config>

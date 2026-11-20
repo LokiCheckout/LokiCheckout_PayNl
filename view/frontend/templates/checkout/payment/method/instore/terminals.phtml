@@ -1,0 +1,48 @@
+<?php
+declare(strict_types=1);
+
+use Loki\Components\Util\Block\BlockRenderer;
+use Loki\CssUtils\Util\CssClass;
+use LokiCheckout\PayNl\Component\Checkout\Payment\Method\Instore\TerminalViewModel;
+use Magento\Framework\Escaper;
+use Magento\Framework\View\Element\Template;
+
+/** @version 2.1.0 */
+/** @var TerminalViewModel $viewModel */
+/** @var Template $block */
+/** @var Escaper $escaper */
+/** @var CssClass $css */
+/** @var BlockRenderer $blockRenderer */
+$terminals = $viewModel->getTerminals();
+$currentValue = (string)$viewModel->getValue();
+?>
+<div class="<?= $escaper->escapeHtmlAttr($css('my-2', 'terminals')) ?>">
+    <?php if (empty($terminals)): ?>
+        <p class="<?= $escaper->escapeHtmlAttr($css('', 'no-terminals')) ?>">
+            <?= $escaper->escapeHtml(__('No terminals are available')) ?>
+        </p>
+    <?php else: ?>
+        <p class="<?= $escaper->escapeHtmlAttr($css('mb-2 font-semibold', 'label')) ?>">
+            <?= $escaper->escapeHtml($viewModel->getFieldLabel()) ?>
+        </p>
+        <ul role="radiogroup" aria-label="<?= $escaper->escapeHtmlAttr($viewModel->getFieldLabel()) ?>">
+            <?php foreach ($terminals as $terminal): ?>
+                <li class="<?= $escaper->escapeHtmlAttr($css('my-2', 'terminal')) ?>">
+                    <label class="<?= $escaper->escapeHtmlAttr($css('flex items-center gap-2 cursor-pointer', 'terminal-label')) ?>">
+                        <input type="radio"
+                               class="<?= $escaper->escapeHtmlAttr($css('form-radio', 'input')) ?>"
+                               name="<?= $escaper->escapeHtmlAttr($viewModel->getFieldName()) ?>"
+                               value="<?= $escaper->escapeHtmlAttr($terminal['id']) ?>"
+                               <?= $currentValue === $terminal['id'] ? 'checked' : '' ?>
+                               :checked="isChecked"
+                               @change="submitValue"
+                        />
+                        <span><?= $escaper->escapeHtml($terminal['label']) ?></span>
+                    </label>
+                </li>
+            <?php endforeach; ?>
+        </ul>
+    <?php endif; ?>
+
+    <?= /* @noEscape */ $blockRenderer->html($block, 'loki-components.utils.local-messages') ?>
+</div>

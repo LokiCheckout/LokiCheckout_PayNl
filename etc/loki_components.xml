@@ -1,0 +1,254 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<components xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:module:Loki_Components:etc/loki_components.xsd">
+    <group name="paynl-customer-fields"
+           context="LokiCheckout\Core\Component\Base\Generic\CheckoutContext"
+           viewModel="LokiCheckout\PayNl\Component\Checkout\Payment\Method\CustomerFields\CustomerFieldsViewModel"
+           repository="LokiCheckout\PayNl\Component\Checkout\Payment\Method\CustomerFields\CustomerFieldsRepository"/>
+
+    <component
+        name="loki-checkout.payment.methods.paynl_payment_afterpay.form.dob"
+        group="paynl-customer-fields">
+        <validator name="paynl_dob"/>
+    </component>
+
+    <component
+        name="loki-checkout.payment.methods.paynl_payment_afterpay.form.cocnumber"
+        group="paynl-customer-fields">
+        <validator name="paynl_coc"/>
+    </component>
+
+    <component
+        name="loki-checkout.payment.methods.paynl_payment_afterpay.form.vatnumber"
+        group="paynl-customer-fields">
+        <validator name="paynl_vat"/>
+    </component>
+
+    <component
+        name="loki-checkout.payment.methods.paynl_payment_afterpay_international.form.dob"
+        group="paynl-customer-fields">
+        <validator name="paynl_dob"/>
+    </component>
+
+    <component
+        name="loki-checkout.payment.methods.paynl_payment_afterpay_international.form.cocnumber"
+        group="paynl-customer-fields">
+        <validator name="paynl_coc"/>
+    </component>
+
+    <component
+        name="loki-checkout.payment.methods.paynl_payment_afterpay_international.form.vatnumber"
+        group="paynl-customer-fields">
+        <validator name="paynl_vat"/>
+    </component>
+
+    <component
+        name="loki-checkout.payment.methods.paynl_payment_alma.form.dob"
+        group="paynl-customer-fields">
+        <validator name="paynl_dob"/>
+    </component>
+
+    <component
+        name="loki-checkout.payment.methods.paynl_payment_alma.form.cocnumber"
+        group="paynl-customer-fields">
+        <validator name="paynl_coc"/>
+    </component>
+
+    <component
+        name="loki-checkout.payment.methods.paynl_payment_alma.form.vatnumber"
+        group="paynl-customer-fields">
+        <validator name="paynl_vat"/>
+    </component>
+
+    <component
+        name="loki-checkout.payment.methods.paynl_payment_biller.form.dob"
+        group="paynl-customer-fields">
+        <validator name="paynl_dob"/>
+    </component>
+
+    <component
+        name="loki-checkout.payment.methods.paynl_payment_biller.form.cocnumber"
+        group="paynl-customer-fields">
+        <validator name="paynl_coc"/>
+    </component>
+
+    <component
+        name="loki-checkout.payment.methods.paynl_payment_biller.form.vatnumber"
+        group="paynl-customer-fields">
+        <validator name="paynl_vat"/>
+    </component>
+
+    <component
+        name="loki-checkout.payment.methods.paynl_payment_biller.form.companyfield"
+        group="paynl-customer-fields"/>
+
+    <component
+        name="loki-checkout.payment.methods.paynl_payment_billink.form.dob"
+        group="paynl-customer-fields">
+        <validator name="paynl_dob"/>
+    </component>
+
+    <component
+        name="loki-checkout.payment.methods.paynl_payment_billink.form.cocnumber"
+        group="paynl-customer-fields">
+        <validator name="paynl_coc"/>
+    </component>
+
+    <component
+        name="loki-checkout.payment.methods.paynl_payment_billink.form.vatnumber"
+        group="paynl-customer-fields">
+        <validator name="paynl_vat"/>
+    </component>
+
+    <component
+        name="loki-checkout.payment.methods.paynl_payment_billink.form.billink_agree"
+        group="paynl-customer-fields"/>
+
+    <component
+        name="loki-checkout.payment.methods.paynl_payment_capayable_gespreid.form.dob"
+        group="paynl-customer-fields">
+        <validator name="paynl_dob"/>
+    </component>
+
+    <component
+        name="loki-checkout.payment.methods.paynl_payment_capayable_gespreid.form.cocnumber"
+        group="paynl-customer-fields">
+        <validator name="paynl_coc"/>
+    </component>
+
+    <component
+        name="loki-checkout.payment.methods.paynl_payment_capayable_gespreid.form.vatnumber"
+        group="paynl-customer-fields">
+        <validator name="paynl_vat"/>
+    </component>
+
+    <component
+        name="loki-checkout.payment.methods.paynl_payment_in3business.form.dob"
+        group="paynl-customer-fields">
+        <validator name="paynl_dob"/>
+    </component>
+
+    <component
+        name="loki-checkout.payment.methods.paynl_payment_in3business.form.cocnumber"
+        group="paynl-customer-fields">
+        <validator name="paynl_coc"/>
+    </component>
+
+    <component
+        name="loki-checkout.payment.methods.paynl_payment_in3business.form.vatnumber"
+        group="paynl-customer-fields">
+        <validator name="paynl_vat"/>
+    </component>
+
+    <component
+        name="loki-checkout.payment.methods.paynl_payment_klarna.form.dob"
+        group="paynl-customer-fields">
+        <validator name="paynl_dob"/>
+    </component>
+
+    <component
+        name="loki-checkout.payment.methods.paynl_payment_klarna.form.cocnumber"
+        group="paynl-customer-fields">
+        <validator name="paynl_coc"/>
+    </component>
+
+    <component
+        name="loki-checkout.payment.methods.paynl_payment_klarna.form.vatnumber"
+        group="paynl-customer-fields">
+        <validator name="paynl_vat"/>
+    </component>
+
+    <component
+        name="loki-checkout.payment.methods.paynl_payment_klarnakp.form.dob"
+        group="paynl-customer-fields">
+        <validator name="paynl_dob"/>
+    </component>
+
+    <component
+        name="loki-checkout.payment.methods.paynl_payment_klarnakp.form.cocnumber"
+        group="paynl-customer-fields">
+        <validator name="paynl_coc"/>
+    </component>
+
+    <component
+        name="loki-checkout.payment.methods.paynl_payment_klarnakp.form.vatnumber"
+        group="paynl-customer-fields">
+        <validator name="paynl_vat"/>
+    </component>
+
+    <component
+        name="loki-checkout.payment.methods.paynl_payment_spraypay.form.dob"
+        group="paynl-customer-fields">
+        <validator name="paynl_dob"/>
+    </component>
+
+    <component
+        name="loki-checkout.payment.methods.paynl_payment_spraypay.form.cocnumber"
+        group="paynl-customer-fields">
+        <validator name="paynl_coc"/>
+    </component>
+
+    <component
+        name="loki-checkout.payment.methods.paynl_payment_spraypay.form.vatnumber"
+        group="paynl-customer-fields">
+        <validator name="paynl_vat"/>
+    </component>
+
+    <component
+        name="loki-checkout.payment.methods.paynl_payment_xafaxmynetpay.form.dob"
+        group="paynl-customer-fields">
+        <validator name="paynl_dob"/>
+    </component>
+
+    <component
+        name="loki-checkout.payment.methods.paynl_payment_xafaxmynetpay.form.cocnumber"
+        group="paynl-customer-fields">
+        <validator name="paynl_coc"/>
+    </component>
+
+    <component
+        name="loki-checkout.payment.methods.paynl_payment_xafaxmynetpay.form.vatnumber"
+        group="paynl-customer-fields">
+        <validator name="paynl_vat"/>
+    </component>
+
+    <component
+        name="loki-checkout.payment.methods.paynl_payment_yourgift.form.dob"
+        group="paynl-customer-fields">
+        <validator name="paynl_dob"/>
+    </component>
+
+    <component
+        name="loki-checkout.payment.methods.paynl_payment_yourgift.form.cocnumber"
+        group="paynl-customer-fields">
+        <validator name="paynl_coc"/>
+    </component>
+
+    <component
+        name="loki-checkout.payment.methods.paynl_payment_yourgift.form.vatnumber"
+        group="paynl-customer-fields">
+        <validator name="paynl_vat"/>
+    </component>
+
+    <component
+        name="loki-checkout.payment.methods.paynl_payment_instore.form.pinmoment"
+        context="LokiCheckout\Core\Component\Base\Generic\CheckoutContext"
+        viewModel="LokiCheckout\PayNl\Component\Checkout\Payment\Method\Instore\PinMomentViewModel"
+        repository="LokiCheckout\PayNl\Component\Checkout\Payment\Method\Instore\PinMomentRepository">
+        <target name="loki-checkout.payment.methods.paynl_payment_instore.form.payment_option"/>
+    </component>
+
+    <component
+        name="loki-checkout.payment.methods.paynl_payment_instore.form.payment_option"
+        context="LokiCheckout\Core\Component\Base\Generic\CheckoutContext"
+        viewModel="LokiCheckout\PayNl\Component\Checkout\Payment\Method\Instore\TerminalViewModel"
+        repository="LokiCheckout\PayNl\Component\Checkout\Payment\Method\Instore\TerminalRepository"
+    />
+
+    <component name="loki-checkout.billing.address.company">
+        <target name="loki-checkout.payment.methods"/>
+    </component>
+
+    <component name="loki-checkout.shipping.methods">
+        <target name="loki-checkout.payment.methods"/>
+    </component>
+</components>
